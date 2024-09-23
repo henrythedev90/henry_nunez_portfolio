@@ -27,31 +27,47 @@ export default function Header() {
 
   return (
     <header className={"container"} ref={headerRef}>
-      <div className={"grid_display"}>
-        <div className={"nav_wrapper"}>
-          <div className={"logo"}>
+      <div className={"nav_wrapper"}>
+        <div className={"logo"}>
+          <Link href={NAV_LINKS[0].path}>
             <h1>
               <span>H</span>enry
             </h1>
-          </div>
-          <div className={"navigation"} ref={menuRef} onClick={toggleMenu}>
-            <div className={"nav_menu"}>
-              {NAV_LINKS.map((item, index) => {
+          </Link>
+        </div>
+        <div
+          className={"navigation animation"}
+          ref={menuRef}
+          onClick={toggleMenu}
+        >
+          <div className={"nav_menu"}>
+            {NAV_LINKS.map((item, index) => {
+              if (index > 0) {
                 return (
                   <Link key={index} href={item.path}>
                     {item.display}
                   </Link>
                 );
-              })}
-              <div className={"mobile_logo"}>
+              }
+            })}
+            <div className={"mobile_logo"}>
+              <Link href={NAV_LINKS[0].path}>
                 <h1>
                   <span>H</span>enry
                 </h1>
-              </div>
+              </Link>
             </div>
           </div>
-          <span className={"mobile_menu_logo"}>mobile menu will go here</span>
         </div>
+        <span className={"mobile_menu_logo"}>
+          <i onClick={toggleMenu}>
+            <div className={"box"}>
+              <div className={"bar1"}></div>
+              <div className={"bar2"}></div>
+              <div className={"bar3"}></div>
+            </div>
+          </i>
+        </span>
       </div>
     </header>
   );
