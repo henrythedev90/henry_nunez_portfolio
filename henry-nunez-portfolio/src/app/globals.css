@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --lapisLazuli: #00557d;
+  --cerulean: #0a82a2;
+  --cadetGray: #7d99a9;
+  --atomicTangerine: #e39172;
+  --candyAppleRed: #f33721;
+  --vermilion: #fd3938;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lapisLazuli: #00557d;
+    --cerulean: #0a82a2;
+    --cadetGray: #7d99a9;
+    --atomicTangerine: #e39172;
+    --candyAppleRed: #f33721;
+  }
+}
+html {
+  height: 100%;
+}
+
+body {
+  color: var(--vermilion);
+  background: linear-gradient(
+    var(--lapisLazuli) 0% 10%,
+    var(--cerulean) 44% 25%,
+    var(--cadetGray) 56% 58%,
+    var(--atomicTangerine) 82% 86%,
+    var(--candyAppleRed) 99%
+  );
+  height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
