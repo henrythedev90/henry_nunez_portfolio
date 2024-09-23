@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --lapisLazuli: #00557d;
   --cerulean: #0a82a2;
