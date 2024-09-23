@@ -1,0 +1,106 @@
+:root {
+  --lapisLazuli: #00557d;
+  --cerulean: #0a82a2;
+  --cadetGray: #7d99a9;
+  --atomicTangerine: #e39172;
+  --candyAppleRed: #f33721;
+  --vermilion: #fd3938;
+  --darkerBlack: #030201;
+  --myrtleGreen: #267675;
+}
+
+.skills_container {
+  width: 600px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.skills_atom {
+  width: 100%;
+  height: 600px;
+  perspective: 800px;
+  position: relative;
+}
+.skills_nucleus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -50px;
+  width: 100px;
+  height: 100px;
+  padding-top: 38px;
+}
+.skills_orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 600px;
+  border-radius: 600px;
+  border-radius: 600px;
+  border-radius: 600px;
+  transform-style: preserve-3d;
+  transform: rotateX(80deg) rotateY(200deg);
+  border: 3px solid var(--darkerBlack);
+}
+.skills_atom .skills_orbit:nth-child(2) {
+  transform: rotateX(80deg) rotateY(250deg);
+}
+.skills_atom .skills_orbit:nth-child(3) {
+  transform: rotateX(80deg) rotateY(160deg);
+}
+.skills_atom .skills_orbit:nth-child(4) {
+  transform: rotateX(80deg) rotateY(130deg);
+}
+.skills_atom .skills_orbit:nth-child(2) .skills_path,
+.skills_atom .skills_orbit:nth-child(2) .skills_electron {
+  animation-delay: -1s;
+}
+.skills_atom .skills_orbit:nth-child(3) .skills_path,
+.skills_atom .skills_orbit:nth-child(3) .skills_electron {
+  animation-delay: -1.5s;
+}
+.skills_atom .skills_orbit:nth-child(4) .skills_path,
+.skills_atom .skills_orbit:nth-child(4) .skills_electron {
+  animation-delay: -0.5s;
+}
+
+.skills_path {
+  width: 600px;
+  height: 600px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation-name: pathRotate;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.skills_electron {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  margin-left: -5px;
+  animation-name: electronFix;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes pathRotate {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes electronFix {
+  from {
+    transform: rotateX(90deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(90deg) rotateY(-360deg);
+  }
+}
