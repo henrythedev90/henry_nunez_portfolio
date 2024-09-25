@@ -26,7 +26,7 @@ export default function Header() {
   };
 
   return (
-    <header className={"container"} ref={headerRef}>
+    <nav className={"nav_bar"} ref={headerRef}>
       <div className={"nav_wrapper"}>
         <div className={"logo"}>
           <Link href={NAV_LINKS[0].path}>
@@ -69,6 +69,6 @@ export default function Header() {
           </i>
         </span>
       </div>
-    </header>
+    </nav>
   );
 }
