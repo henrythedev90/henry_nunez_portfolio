@@ -129,6 +129,7 @@
   .mobile_menu_logo {
     display: block !important;
     margin-right: 30px;
+    border: 1px solid var(--vermilion);
   }
   .bar1,
   .bar2,

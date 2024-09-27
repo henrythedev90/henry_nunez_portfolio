@@ -1,10 +1,11 @@
 "use client";
 import "./styles.css";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { NAV_LINKS } from "./navLinks";
 import Link from "next/link";
 
 export default function Header() {
+  const [isMobile, setIsMobile] = useState(false);
   const headerRef = useRef(null);
   const menuRef = useRef(null);
 
@@ -19,6 +20,12 @@ export default function Header() {
   useEffect(() => {
     window.addEventListener("scroll", headerFunc);
     return () => window.removeEventListener("scroll", headerFunc);
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const toggleMenu = () => {
@@ -26,7 +33,7 @@ export default function Header() {
   };
 
   return (
-    <nav className={"nav_bar"} ref={headerRef}>
+    <nav className={`nav_bar ${isMobile ? "mobile" : ""}`} ref={headerRef}>
       <div className={"nav_wrapper"}>
         <div className={"logo"}>
           <Link href={NAV_LINKS[0].path}>
@@ -36,9 +43,9 @@ export default function Header() {
           </Link>
         </div>
         <div
-          className={"navigation animation"}
+          className={`navigation ${isMobile ? "mobile" : ""} animation`}
           ref={menuRef}
-          onClick={toggleMenu}
+          onClick={isMobile ? toggleMenu : undefined}
         >
           <div className={"nav_menu"}>
             {NAV_LINKS.map((item, index) => {
@@ -59,15 +66,17 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <span className={"mobile_menu_logo"}>
-          <i onClick={toggleMenu}>
-            <div className={"box"}>
-              <div className={"bar1"}></div>
-              <div className={"bar2"}></div>
-              <div className={"bar3"}></div>
-            </div>
-          </i>
-        </span>
+        {isMobile && (
+          <span className={"mobile_menu_logo"}>
+            <i onClick={isMobile ? toggleMenu : undefined}>
+              <div className={"box"}>
+                <div className={"bar1"}>heelo</div>
+                <div className={"bar2"}></div>
+                <div className={"bar3"}></div>
+              </div>
+            </i>
+          </span>
+        )}
       </div>
     </nav>
   );
