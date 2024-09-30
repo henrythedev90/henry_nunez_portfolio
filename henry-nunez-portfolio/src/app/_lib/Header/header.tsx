@@ -6,6 +6,7 @@ import Link from "next/link";
 
 export default function Header() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -23,20 +24,29 @@ export default function Header() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", headerFunc);
-    return () => window.removeEventListener("scroll", headerFunc);
-
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("scroll", headerFunc);
+    return () => {
+      window.removeEventListener("scroll", headerFunc);
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const toggleMenu = () => {
-    if (menuRef.current) {
-      menuRef.current.classList.toggle("menu_active");
-    }
+    // if (menuRef.current) {
+    //   menuRef.current.classList.toggle("menu_active");
+    // }
+    setIsMenuOpen((prev) => !prev);
   };
 
   return (
@@ -50,7 +60,7 @@ export default function Header() {
           </Link>
         </div>
         <div
-          className={`navigation animation`}
+          className={`navigation animation ${isMenuOpen ? "menu_active" : ""}`}
           ref={menuRef}
           onClick={isMobile ? toggleMenu : undefined}
         >
