@@ -14,14 +14,17 @@
 }
 
 .skills_container {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   margin: 50px auto;
   text-align: center;
 }
 
 .skills_atom {
   width: 100%;
-  height: 600px;
+  aspect-ratio: 1 / 1;
+  max-width: 600px;
+  max-height: 600px;
   perspective: 800px;
   position: relative;
 }
@@ -29,24 +32,56 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -50px 0 0 -50px;
-  width: 100px;
-  height: 100px;
-  padding-top: 38px;
+  transform: translate(-50%, -50%);
+  width: 16.67%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--darkerBlack);
 }
 .skills_orbit {
   position: absolute;
   top: 0;
   left: 0;
-  width: 600px;
-  height: 600px;
-  border-radius: 600px;
-  border-radius: 600px;
-  border-radius: 600px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   transform-style: preserve-3d;
   transform: rotateX(80deg) rotateY(200deg);
-  border: 3px solid var(--darkerBlack);
+  border: 5px solid var(--darkerBlack);
+  transition: transform 0.3s ease;
 }
+.skills_path {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: pathRotate 8s linear infinite;
+}
+
+.skills_electron {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotateX(-80deg) rotateY(-200deg)
+    rotateY(180deg);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--darkerBlack);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--white);
+  font-weight: bold;
+}
+/* .skills_electron_text {
+  display: inline-block;
+  transform: rotateX(80deg) rotateY(200deg);
+} */
+
 .skills_atom .skills_orbit:nth-child(2) {
   transform: rotateX(80deg) rotateY(250deg);
 }
@@ -60,51 +95,89 @@
 .skills_atom .skills_orbit:nth-child(2) .skills_electron {
   animation-delay: -1s;
 }
-.skills_atom .skills_orbit:nth-child(3) .skills_path,
+.skills_path,
 .skills_atom .skills_orbit:nth-child(3) .skills_electron {
   animation-delay: -1.5s;
 }
-.skills_atom .skills_orbit:nth-child(4) .skills_path,
+.skills_path,
 .skills_atom .skills_orbit:nth-child(4) .skills_electron {
   animation-delay: -0.5s;
 }
 
-.skills_path {
-  width: 600px;
-  height: 600px;
-  position: relative;
-  transform-style: preserve-3d;
-  animation-name: pathRotate;
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+.skills_orbit:nth-child(2) .skills_electron {
+  transform: translateX(-50%) translateY(-50%) rotateX(-80deg) rotateY(-250deg)
+    rotateY(180deg);
+}
+.skills_orbit:nth-child(3) .skills_electron {
+  transform: translateX(-50%) translateY(-50%) rotateX(-80deg) rotateY(-160deg)
+    rotateY(180deg);
+}
+.skills_orbit:nth-child(4) .skills_electron {
+  transform: translateX(-50%) translateY(-50%) rotateX(-80deg) rotateY(-130deg)
+    rotateY(180deg);
 }
 
-.skills_electron {
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  margin-left: -5px;
-  animation-name: electronFix;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+/* .skills_orbit:nth-child(2) .skills_electron_text {
+  transform: rotateX(80deg) rotateY(250deg);
+} */
+/* .skills_orbit:nth-child(3) .skills_electron_text {
+  transform: rotateX(80deg) rotateY(160deg);
 }
+.skills_orbit:nth-child(4) .skills_electron_text {
+  transform: rotateX(80deg) rotateY(130deg);
+} */
 
 @keyframes pathRotate {
-  from {
-    transform: rotateZ(0deg);
-  }
   to {
     transform: rotateZ(360deg);
   }
 }
 
 @keyframes electronFix {
-  from {
-    transform: rotateX(90deg) rotateY(0deg);
-  }
   to {
     transform: rotateX(90deg) rotateY(-360deg);
   }
+}
+
+@media (max-width: 768px) {
+  .skills_atom .skills_orbit:nth-child(2) {
+    transform: rotateX(70deg) rotateY(230deg);
+  }
+  .skills_atom .skills_orbit:nth-child(3) {
+    transform: rotateX(70deg) rotateY(140deg);
+  }
+  .skills_atom .skills_orbit:nth-child(4) {
+    transform: rotateX(70deg) rotateY(110deg);
+  }
+  .skills_orbit {
+    transform: rotateX(70deg) rotateY(180deg); /* Adjust angles for smaller screens */
+  }
+  .skills_electron {
+    transform: translateX(-50%) translateY(-50%) rotateX(-70deg)
+      rotateY(-180deg) rotateY(180deg);
+  }
+  .skills_orbit:nth-child(2) .skills_electron {
+    transform: translateX(-50%) translateY(-50%) rotateX(-70deg)
+      rotateY(-230deg) rotateY(180deg);
+  }
+  .skills_orbit:nth-child(3) .skills_electron {
+    transform: translateX(-50%) translateY(-50%) rotateX(-70deg)
+      rotateY(-140deg) rotateY(180deg);
+  }
+  .skills_orbit:nth-child(4) .skills_electron {
+    transform: translateX(-50%) translateY(-50%) rotateX(-70deg)
+      rotateY(-110deg) rotateY(180deg);
+  }
+  /* .skills_electron_text {
+    transform: rotateX(70deg) rotateY(180deg);
+  }
+  .skills_orbit:nth-child(2) .skills_electron_text {
+    transform: rotateX(70deg) rotateY(230deg);
+  }
+  .skills_orbit:nth-child(3) .skills_electron_text {
+    transform: rotateX(70deg) rotateY(140deg);
+  }
+  .skills_orbit:nth-child(4) .skills_electron_text {
+    transform: rotateX(70deg) rotateY(110deg);
+  } */
 }
