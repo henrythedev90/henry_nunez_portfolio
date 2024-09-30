@@ -18,6 +18,10 @@
   max-width: 600px;
   margin: 50px auto;
   text-align: center;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 4px solid var(--darkerBlack);
+  padding: 30px;
 }
 
 .skills_atom {
@@ -38,7 +42,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--darkerBlack);
+  background-color: var(--darkerBlack);
+  color: var(--vermilion);
+  border-radius: 50%;
+  border: 4px double var(--atomicTangerine);
+  box-shadow: 0 0 5px var(--atomicTangerine);
 }
 .skills_orbit {
   position: absolute;
@@ -49,7 +57,7 @@
   border-radius: 50%;
   transform-style: preserve-3d;
   transform: rotateX(80deg) rotateY(200deg);
-  border: 5px solid var(--darkerBlack);
+  border: 6px solid rgba(255, 255, 255, 0.3);
   transition: transform 0.3s ease;
 }
 .skills_path {
@@ -68,13 +76,14 @@
     rotateY(180deg);
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 30px/10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   background-color: var(--darkerBlack);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  color: var(--white);
+  color: rgb(255, 255, 255);
   font-weight: bold;
 }
 
@@ -103,14 +112,20 @@
 .skills_orbit:nth-child(2) .skills_electron {
   transform: translateX(-50%) translateY(-50%) rotateX(-80deg) rotateY(-250deg)
     rotateY(180deg);
+  width: fit-content;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 .skills_orbit:nth-child(3) .skills_electron {
   transform: translateX(-50%) translateY(-50%) rotateX(-80deg) rotateY(-160deg)
     rotateY(180deg);
+  width: fit-content;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 .skills_orbit:nth-child(4) .skills_electron {
   transform: translateX(-50%) translateY(-50%) rotateX(-80deg) rotateY(-130deg)
     rotateY(180deg);
+  width: fit-content;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 @keyframes pathRotate {
@@ -129,6 +144,9 @@
   .skills_atom .skills_orbit:nth-child(2) {
     transform: rotateX(70deg) rotateY(230deg);
   }
+  .skills_container {
+    padding: 20px;
+  }
   .skills_atom .skills_orbit:nth-child(3) {
     transform: rotateX(70deg) rotateY(140deg);
   }
@@ -136,7 +154,8 @@
     transform: rotateX(70deg) rotateY(110deg);
   }
   .skills_orbit {
-    transform: rotateX(70deg) rotateY(180deg); /* Adjust angles for smaller screens */
+    transform: rotateX(70deg) rotateY(180deg);
+    border: 4px solid rgba(255, 255, 255, 0.3);
   }
   .skills_electron {
     transform: translateX(-50%) translateY(-50%) rotateX(-70deg)
