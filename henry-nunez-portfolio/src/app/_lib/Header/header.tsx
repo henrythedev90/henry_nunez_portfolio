@@ -6,14 +6,19 @@ import Link from "next/link";
 
 export default function Header() {
   const [isMobile, setIsMobile] = useState(false);
-  const headerRef = useRef(null);
-  const menuRef = useRef(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const headerFunc = () => {
-    if (document.body.scrollTop > 5 || document.documentElement.scrollTop > 5) {
-      headerRef.current.classList.add("header_shrink");
-    } else {
-      headerRef.current.classList.remove("header_shrink");
+    if (headerRef.current) {
+      if (
+        document.body.scrollTop > 5 ||
+        document.documentElement.scrollTop > 5
+      ) {
+        headerRef.current?.classList?.add("header_shrink");
+      } else {
+        headerRef.current?.classList?.remove("header_shrink");
+      }
     }
   };
 
@@ -29,7 +34,9 @@ export default function Header() {
   }, []);
 
   const toggleMenu = () => {
-    menuRef.current.classList.toggle("menu_active");
+    if (menuRef.current) {
+      menuRef.current.classList.toggle("menu_active");
+    }
   };
 
   return (
@@ -43,7 +50,7 @@ export default function Header() {
           </Link>
         </div>
         <div
-          className={`navigation ${isMobile ? "mobile" : ""} animation`}
+          className={`navigation animation`}
           ref={menuRef}
           onClick={isMobile ? toggleMenu : undefined}
         >
@@ -51,7 +58,11 @@ export default function Header() {
             {NAV_LINKS.map((item, index) => {
               if (index > 0) {
                 return (
-                  <Link key={index} href={item.path}>
+                  <Link
+                    key={index}
+                    href={item.path}
+                    className={isMobile ? "nav_link" : ""}
+                  >
                     {item.display}
                   </Link>
                 );
@@ -66,17 +77,16 @@ export default function Header() {
             </div>
           </div>
         </div>
-        {isMobile && (
-          <span className={"mobile_menu_logo"}>
-            <i onClick={isMobile ? toggleMenu : undefined}>
-              <div className={"box"}>
-                <div className={"bar1"}>heelo</div>
-                <div className={"bar2"}></div>
-                <div className={"bar3"}></div>
-              </div>
-            </i>
-          </span>
-        )}
+
+        <span className={"mobile_menu_logo"}>
+          <i onClick={toggleMenu}>
+            <div className={"box"}>
+              <div className={"bar1"}></div>
+              <div className={"bar2"}></div>
+              <div className={"bar3"}></div>
+            </div>
+          </i>
+        </span>
       </div>
     </nav>
   );
