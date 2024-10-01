@@ -25,6 +25,7 @@ export default function Skills() {
           </div>
         </div>
       </div>
+      <div className="skills_list"></div>
     </div>
   );
 }
