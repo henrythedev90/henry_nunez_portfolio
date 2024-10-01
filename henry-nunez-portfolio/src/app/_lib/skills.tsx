@@ -1,4 +1,4 @@
-export const skills = [
+export const SKILLS: { icon: string; title: string; type: string }[] = [
   {
     icon: "javascript-plain",
     title: "javascript",
@@ -35,8 +35,8 @@ export const skills = [
     type: "Front-End",
   },
   {
-    icon: "nextjs-original",
-    title: "nextjs",
+    icon: "Next.js-original",
+    title: "Next.js",
     type: "Front-End",
   },
   {
