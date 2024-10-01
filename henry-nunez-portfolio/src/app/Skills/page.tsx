@@ -27,6 +27,7 @@ export default function Skills() {
         </div>
       </div>
       <div className="skills_list"></div>
+      {/* Mobile */}
       <div className="skills_list_mobile">
         <div className="skills_front_end">
           <h1>{SKILLS_TYPE[0].type}</h1>
