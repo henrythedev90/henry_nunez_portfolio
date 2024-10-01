@@ -30,7 +30,7 @@ export default function Skills() {
       <div className="skills_list_mobile">
         <div className="skills_front_end">
           <h1>{SKILLS_TYPE[0].type}</h1>
-          <div>
+          <div className="skills_list_mobile_content">
             {SKILLS.filter((item) => item.type === "Front-End").map(
               (item, index) => {
                 return <p key={index}>{item.title}</p>;
@@ -40,7 +40,7 @@ export default function Skills() {
         </div>
         <div className="skills_back_end">
           <h1>{SKILLS_TYPE[1].type}</h1>
-          <div>
+          <div className="skills_list_mobile_content">
             {SKILLS.filter((item) => item.type === "Back-End").map(
               (item, index) => {
                 return <p key={index}>{item.title}</p>;
@@ -50,7 +50,7 @@ export default function Skills() {
         </div>
         <div className="skills_tools">
           <h1>{SKILLS_TYPE[2].type}</h1>
-          <div>
+          <div className="skills_list_mobile_content">
             {SKILLS.filter((item) => item.type === "Tools").map(
               (item, index) => {
                 return <p key={index}>{item.title}</p>;
@@ -60,7 +60,7 @@ export default function Skills() {
         </div>
         <div className="skills_testing">
           <h1>{SKILLS_TYPE[3].type}</h1>
-          <div>
+          <div className="skills_list_mobile_content">
             {SKILLS.filter((item) => item.type === "Testing").map(
               (item, index) => {
                 return <p key={index}>{item.title}</p>;
