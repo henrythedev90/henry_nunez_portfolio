@@ -27,12 +27,13 @@
     --atomicTangerine: #e39172;
     --candyAppleRed: #f33721;
     --myrtleGreen: #267675;
+    --white: #fff;
   }
 }
 
 body,
 html {
-  color: var(--vermilion);
+  color: var(--white);
   background: linear-gradient(
     var(--lapisLazuli) 0% 10%,
     var(--cerulean) 44% 25%,

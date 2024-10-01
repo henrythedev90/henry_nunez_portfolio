@@ -11,6 +11,7 @@
   --vermilion: #fd3938;
   --darkerBlack: #030201;
   --myrtleGreen: #267675;
+  --white: #fff;
 }
 .skills_page {
   width: 100%;
@@ -205,7 +206,7 @@
   .skills_list_mobile_title {
     font-size: 1.2rem;
     padding: 10px 10px;
-    border-bottom: 4px solid var(--vermilion);
+    border-bottom: 4px solid var(--white);
   }
   .skills_list_mobile_content {
     padding: 10px;
@@ -214,6 +215,6 @@
     font-size: 1rem;
     padding: 5px;
     margin: 10px 0;
-    border-bottom: 2px solid var(--vermilion);
+    border-bottom: 2px solid var(--white);
   }
 }
