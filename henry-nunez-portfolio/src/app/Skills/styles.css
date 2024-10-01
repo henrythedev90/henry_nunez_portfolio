@@ -12,7 +12,10 @@
   --darkerBlack: #030201;
   --myrtleGreen: #267675;
 }
-
+.skills_page {
+  width: 100%;
+  height: 100vh;
+}
 .skills_container {
   width: 100%;
   max-width: 600px;
@@ -141,6 +144,10 @@
 }
 
 @media (max-width: 768px) {
+  .skills_page {
+    padding: 0px 20px;
+    padding-top: 20px;
+  }
   .skills_atom .skills_orbit:nth-child(2) {
     transform: rotateX(70deg) rotateY(230deg);
   }
