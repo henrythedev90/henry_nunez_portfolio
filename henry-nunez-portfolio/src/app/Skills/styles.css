@@ -202,6 +202,7 @@
     border: 4px solid var(--darkerBlack);
     border-radius: 10px;
     background-color: var(--darkerBlack);
+    box-shadow: 0 0 10px var(--white);
   }
   .skills_list_mobile_title {
     font-size: 1.2rem;
