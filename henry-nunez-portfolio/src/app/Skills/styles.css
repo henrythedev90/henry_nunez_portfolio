@@ -181,6 +181,7 @@
     transform: translateX(-50%) translateY(-50%) rotateX(-70deg)
       rotateY(-110deg) rotateY(180deg);
   }
+
   .skills_list_mobile_content {
     display: flex;
     flex-direction: column;
@@ -207,7 +208,6 @@
   .skills_list_mobile_title {
     font-size: 1.2rem;
     padding: 10px 10px;
-    border-bottom: 4px solid var(--white);
   }
   .skills_list_mobile_content {
     padding: 10px;
@@ -217,5 +217,10 @@
     padding: 5px;
     margin: 10px 0;
     border-bottom: 2px solid var(--white);
+  }
+  .toggle_skills {
+    cursor: pointer;
+    border: 2px solid var(--vermilion);
+    border-bottom: 4px solid var(--white);
   }
 }
