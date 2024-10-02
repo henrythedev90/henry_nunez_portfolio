@@ -185,6 +185,7 @@
   .skills_list_mobile_content {
     display: flex;
     flex-direction: column;
+    padding: 10px;
     gap: 5px;
   }
   .skills_list_mobile {
@@ -208,9 +209,6 @@
   .skills_list_mobile_title {
     font-size: 1.2rem;
     padding: 10px 10px;
-  }
-  .skills_list_mobile_content {
-    padding: 10px;
   }
   .skills_list_mobile_item {
     font-size: 1rem;
