@@ -202,6 +202,8 @@
   .skills_list_mobile_title {
     font-size: 1.2rem;
     padding: 10px 10px;
+    padding-left: 20px;
+    text-align: center;
   }
   .skills_list_mobile_item {
     font-size: 1rem;
@@ -216,11 +218,18 @@
     transition: max-height 0.3s ease-out;
   }
   .skills_list_mobile_item.open {
-    max-height: 500px; /* Adjust this value based on your content */
+    max-height: 500px;
     transition: max-height 0.5s ease-in;
   }
   .toggle_skills {
     cursor: context-menu;
     border-bottom: 4px solid var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .caret_icon {
+    font-size: 1.5rem;
+    margin-left: 200px;
   }
 }

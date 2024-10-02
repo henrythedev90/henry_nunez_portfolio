@@ -1,5 +1,6 @@
 "use client";
 import { SKILLS_TYPE } from "../_lib/skillsType";
+import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import { SKILLS } from "../_lib/skills";
 import { useState } from "react";
 import "./styles.css";
@@ -52,6 +53,11 @@ export default function Skills() {
               <h1 className="skills_list_mobile_title">
                 {skillType.type.replace("_", "-")}
               </h1>
+              {openSkills === skillType.type ? (
+                <ChevronUpIcon className="h-5 w-5 text-white" />
+              ) : (
+                <ChevronDownIcon className="h-5 w-5 text-white" />
+              )}
             </div>
             {openSkills === skillType.type && (
               <ul
