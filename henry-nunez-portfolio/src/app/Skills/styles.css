@@ -147,7 +147,6 @@
 @media (max-width: 768px) {
   .skills_page {
     padding: 0px 20px;
-    padding-top: 20px;
   }
   .skills_atom .skills_orbit:nth-child(2) {
     transform: rotateX(70deg) rotateY(230deg);
@@ -182,12 +181,6 @@
       rotateY(-110deg) rotateY(180deg);
   }
 
-  .skills_list_mobile_content {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    gap: 5px;
-  }
   .skills_list_mobile {
     display: flex;
     flex-direction: column;
@@ -215,10 +208,12 @@
     padding: 5px;
     margin: 10px 0;
     border-bottom: 2px solid var(--white);
+    display: block;
+    padding: 10px;
+    gap: 5px;
   }
   .toggle_skills {
-    cursor: pointer;
-    border: 2px solid var(--vermilion);
+    cursor: context-menu;
     border-bottom: 4px solid var(--white);
   }
 }
