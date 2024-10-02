@@ -4,7 +4,7 @@ import { SKILLS } from "../_lib/skills";
 import { useState } from "react";
 import "./styles.css";
 export default function Skills() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [openSkills, setOpenSkills] = useState<string | null>(null);
   const rotateText = {
     display: "inline-block",
     transform: "rotateX(180deg)",
@@ -18,7 +18,9 @@ export default function Skills() {
               <div className="skills_orbit" key={index}>
                 <div className="skills_path">
                   <div className="skills_electron">
-                    <span style={rotateText}>{item.type}</span>
+                    <span style={rotateText}>
+                      {item.type.replace("_", "-")}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -32,54 +34,40 @@ export default function Skills() {
       <div className="skills_list"></div>
       {/* Mobile */}
       <div className="skills_list_mobile">
-        <div className="skills_front_end">
-          <div className="toggle_skills" onClick={() => setIsOpen(!isOpen)}>
-            <h1 className="skills_list_mobile_title">{SKILLS_TYPE[0].type}</h1>
-          </div>
-          <ul className="skills_list_mobile_item">
-            {SKILLS.filter((item) => item.type === "Front-End").map(
-              (item, index) => {
-                return <li key={index}>{item.title}</li>;
+        {SKILLS_TYPE.map((skillType) => (
+          <div
+            key={skillType.type}
+            className={`skills_${skillType.type
+              .toLowerCase()
+              .replace(" ", "_")}`}
+          >
+            <div
+              className="toggle_skills"
+              onClick={() =>
+                setOpenSkills(
+                  openSkills === skillType.type ? null : skillType.type
+                )
               }
+            >
+              <h1 className="skills_list_mobile_title">
+                {skillType.type.replace("_", "-")}
+              </h1>
+            </div>
+            {openSkills === skillType.type && (
+              <ul
+                className={`skills_list_mobile_item ${
+                  openSkills === skillType.type ? "open" : ""
+                }`}
+              >
+                {SKILLS.filter((item) => item.type === skillType.type).map(
+                  (item, index) => (
+                    <li key={index}>{item.title}</li>
+                  )
+                )}
+              </ul>
             )}
-          </ul>
-        </div>
-        <div className="skills_back_end">
-          <div className="toggle_skills" onClick={() => setIsOpen(!isOpen)}>
-            <h1 className="skills_list_mobile_title">{SKILLS_TYPE[1].type}</h1>
           </div>
-          <ul className="skills_list_mobile_item">
-            {SKILLS.filter((item) => item.type === "Back-End").map(
-              (item, index) => {
-                return <li key={index}>{item.title}</li>;
-              }
-            )}
-          </ul>
-        </div>
-        <div className="skills_tools">
-          <div className="toggle_skills" onClick={() => setIsOpen(!isOpen)}>
-            <h1 className="skills_list_mobile_title">{SKILLS_TYPE[2].type}</h1>
-          </div>
-          <ul className="skills_list_mobile_item">
-            {SKILLS.filter((item) => item.type === "Tools").map(
-              (item, index) => {
-                return <li key={index}>{item.title}</li>;
-              }
-            )}
-          </ul>
-        </div>
-        <div className="skills_testing">
-          <div className="toggle_skills" onClick={() => setIsOpen(!isOpen)}>
-            <h1 className="skills_list_mobile_title">{SKILLS_TYPE[3].type}</h1>
-          </div>
-          <ul className="skills_list_mobile_item">
-            {SKILLS.filter((item) => item.type === "Testing").map(
-              (item, index) => {
-                return <li key={index}>{item.title}</li>;
-              }
-            )}
-          </ul>
-        </div>
+        ))}
       </div>
     </div>
   );

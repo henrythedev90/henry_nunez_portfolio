@@ -2,22 +2,22 @@ export const SKILLS: { icon: string; title: string; type: string }[] = [
   {
     icon: "javascript-plain",
     title: "javascript",
-    type: "Front-End",
+    type: "Front_End",
   },
   {
     icon: "typescript-plain",
     title: "typescript",
-    type: "Front-End",
+    type: "Front_End",
   },
   {
     icon: "css3-plain",
     title: "css3",
-    type: "Front-End",
+    type: "Front_End",
   },
   {
     icon: "sass-original",
     title: "sass",
-    type: "Front-End",
+    type: "Front_End",
   },
   {
     icon: "markdown-original",
@@ -27,27 +27,27 @@ export const SKILLS: { icon: string; title: string; type: string }[] = [
   {
     icon: "bootstrap-plain",
     title: "bootstrap",
-    type: "Front-End",
+    type: "Front_End",
   },
   {
     icon: "react-original",
     title: "react",
-    type: "Front-End",
+    type: "Front_End",
   },
   {
     icon: "Next.js-original",
     title: "Next.js",
-    type: "Front-End",
+    type: "Front_End",
   },
   {
     icon: "express-original",
     title: "express",
-    type: "Back-End",
+    type: "Back_End",
   },
   {
     icon: "postgresql-plain",
     title: "postgresql",
-    type: "Back-End",
+    type: "Back_End",
   },
   {
     icon: "git-plain",
@@ -62,7 +62,7 @@ export const SKILLS: { icon: string; title: string; type: string }[] = [
   {
     icon: "html5-plain",
     title: "html5",
-    type: "Front-End",
+    type: "Front_End",
   },
   {
     icon: "vscode-plain",
@@ -72,7 +72,7 @@ export const SKILLS: { icon: string; title: string; type: string }[] = [
   {
     icon: "python-plain",
     title: "python",
-    type: "Back-End",
+    type: "Back_End",
   },
   {
     icon: "notion-plain",
@@ -97,6 +97,6 @@ export const SKILLS: { icon: string; title: string; type: string }[] = [
   {
     icon: "docker-plain",
     title: "docker",
-    type: "Back-End",
+    type: "Back_End",
   },
 ];
