@@ -35,9 +35,9 @@ export default function Skills() {
             {SKILLS.filter((item) => item.type === "Front-End").map(
               (item, index) => {
                 return (
-                  <div className="skills_list_mobile_item" key={index}>
-                    <p key={index}>{item.title}</p>
-                  </div>
+                  <ul className="skills_list_mobile_item" key={index}>
+                    <li key={index}>{item.title}</li>
+                  </ul>
                 );
               }
             )}
@@ -49,9 +49,9 @@ export default function Skills() {
             {SKILLS.filter((item) => item.type === "Back-End").map(
               (item, index) => {
                 return (
-                  <div className="skills_list_mobile_item" key={index}>
-                    <p key={index}>{item.title}</p>
-                  </div>
+                  <ul className="skills_list_mobile_item" key={index}>
+                    <li key={index}>{item.title}</li>
+                  </ul>
                 );
               }
             )}
@@ -63,9 +63,9 @@ export default function Skills() {
             {SKILLS.filter((item) => item.type === "Tools").map(
               (item, index) => {
                 return (
-                  <div className="skills_list_mobile_item" key={index}>
-                    <p key={index}>{item.title}</p>
-                  </div>
+                  <ul className="skills_list_mobile_item" key={index}>
+                    <li key={index}>{item.title}</li>
+                  </ul>
                 );
               }
             )}
@@ -77,9 +77,9 @@ export default function Skills() {
             {SKILLS.filter((item) => item.type === "Testing").map(
               (item, index) => {
                 return (
-                  <div className="skills_list_mobile_item" key={index}>
-                    <p key={index}>{item.title}</p>
-                  </div>
+                  <ul className="skills_list_mobile_item" key={index}>
+                    <li key={index}>{item.title}</li>
+                  </ul>
                 );
               }
             )}
