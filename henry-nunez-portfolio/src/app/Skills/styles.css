@@ -248,6 +248,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 10px;
   }
   .caret_icon {
     font-size: 1.5rem;
@@ -286,5 +287,24 @@
     font-size: 24px;
     justify-content: center;
     text-align: center;
+  }
+  .chevron_arrow_down {
+    display: inline-block;
+    border-right: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    width: 10px;
+    height: 10px;
+    transform: rotate(-315deg);
+    margin-right: 20px;
+  }
+
+  .chevron_arrow_up {
+    display: inline-block;
+    border-right: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    width: 10px;
+    height: 10px;
+    transform: rotate(225deg);
+    margin-right: 20px;
   }
 }
