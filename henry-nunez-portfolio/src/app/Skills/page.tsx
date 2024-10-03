@@ -1,6 +1,7 @@
 "use client";
 import { SKILLS_TYPE } from "../_lib/skillsType";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
+import SkillsImage from "../components/SkillsImage";
 import { SKILLS } from "../_lib/skills";
 import { useState } from "react";
 import "./styles.css";
@@ -44,11 +45,12 @@ export default function Skills() {
           >
             <div
               className="toggle_skills"
-              onClick={() =>
+              onClick={(e) => {
+                e.preventDefault();
                 setOpenSkills(
                   openSkills === skillType.type ? null : skillType.type
-                )
-              }
+                );
+              }}
             >
               <h1 className="skills_list_mobile_title">
                 {skillType.type.replace("_", "-")}
@@ -67,7 +69,11 @@ export default function Skills() {
               >
                 {SKILLS.filter((item) => item.type === skillType.type).map(
                   (item, index) => (
-                    <li key={index}>{item.title}</li>
+                    <SkillsImage
+                      key={index}
+                      title={item.title}
+                      icon={item.icon}
+                    />
                   )
                 )}
               </ul>

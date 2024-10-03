@@ -46,7 +46,7 @@ export default function Header() {
     // if (menuRef.current) {
     //   menuRef.current.classList.toggle("menu_active");
     // }
-    setIsMenuOpen((prev) => !prev);
+    setIsMenuOpen((prevState) => !prevState);
   };
 
   return (

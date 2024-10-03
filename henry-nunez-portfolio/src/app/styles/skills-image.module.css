@@ -1,0 +1,20 @@
+.skills_image_container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skills_image_content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills_image_icon {
+  font-size: 24px; /* Adjust as needed */
+}
+
+.skills_image_title {
+  margin: 0;
+  font-size: 16px;
+}
