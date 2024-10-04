@@ -18,10 +18,10 @@ export default function Skills() {
     );
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 10000);
-    return () => clearInterval(interval);
-  }, [nextSlide]);
+  // useEffect(() => {
+  //   const interval = setInterval(nextSlide, 10000);
+  //   return () => clearInterval(interval);
+  // }, [nextSlide]);
 
   const rotateText = {
     display: "inline-block",
@@ -65,6 +65,10 @@ export default function Skills() {
                 className={`skill-type-slide ${
                   index === currentSlide ? "active" : ""
                 }`}
+                style={{
+                  transform: `translateX(-${currentSlide * 100}%)`,
+                  transition: "transform 0.5s ease-in-out",
+                }}
               >
                 <h2>{skillType.type.replace("_", "-")}</h2>
                 <div className="skills_grid">

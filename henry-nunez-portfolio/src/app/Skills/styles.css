@@ -150,7 +150,8 @@
   .toggle_skills {
     display: none;
   }
-  .carousel_button_prev {
+}
+/* .carousel_button_prev {
     grid-area: left;
   }
   .carousel_button_next {
@@ -162,36 +163,55 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    /* display: flex; */
+    flex: 1;
   }
   .skills_list_desktop {
     display: block;
     max-width: 600px;
+    max-height: 600px;
     border: 4px solid var(--darkerBlack);
     border-radius: 10px;
     padding: 30px;
+    overflow: hidden;
   }
 
   .carousel_wrapper {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas: "left carousel right";
+    display: flex;
     align-items: center;
     border: 4px solid var(--darkerBlack);
     border-radius: 10px;
     padding: 20px;
     width: 100%;
-    height: 400px; /* Adjust this value as needed */
+    max-width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
   }
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
     justify-items: center;
-    align-content: start;
-    overflow-y: auto;
-    padding: 10px;
+    align-items: center;
+  }
+  .skills-grid > div {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .skills_image_content_image {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+  }
+  .skills-grid h5 {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 0.8em;
   }
 
   .carousel-container {
@@ -201,8 +221,9 @@
   }
 
   .skill-type-slide {
-    display: none;
-    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
   }
 
   .skill-type-slide.active {
@@ -219,38 +240,36 @@
     text-transform: capitalize;
   }
 
-  /* .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10; /* Increased z-index to ensure buttons are clickable */
+  .carousel-button {
+    flex-shrink: 0;
+  }
 
-  .carousel-button.prev {
+  .carousel_button_prev {
     left: 10px;
   }
 
-  .carousel-button.next {
+  .carousel_button_next {
     right: 10px;
   }
 
-  /* Ensure buttons are visible and clickable */
-  /* .carousel-button:hover {
-    background: rgba(0, 0, 0, 0.7);
-  } */
-
   /* Add some spacing to the carousel container */
-  .skills_desktop_container {
+/*.skills_desktop_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
   }
-}
+  .skill-type-slide {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px; /* Add some padding inside each slide */
+
+/* .skill-image {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+  } */
 
 /* Tablet styles */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {

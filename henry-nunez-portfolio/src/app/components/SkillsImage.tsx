@@ -1,7 +1,12 @@
 import React from "react";
 import "../styles/skills-image.module.css";
 
-const SkillsImage = ({ title, icon }: { title: string; icon: string }) => {
+interface SkillsImageProps {
+  title: string;
+  icon: string;
+}
+
+const SkillsImage: React.FC<SkillsImageProps> = ({ title, icon }) => {
   return (
     <li className="skills_image_container">
       <div className="skills_image_content">
