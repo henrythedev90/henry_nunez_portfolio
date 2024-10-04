@@ -20,11 +20,16 @@
 }
 
 .nav_bar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 1000;
   height: 84px;
   line-height: 80px;
   border-bottom: 1px solid var(--vermilion);
   background-color: var(--darkerBlack);
+  transition: all 0.3s ease;
 }
 /* .nav_bar {
   display: flex;
@@ -74,6 +79,9 @@
   display: none;
 }
 .menu_active {
+  display: none !important;
+}
+.navigation {
   display: none;
 }
 .header_shrink {

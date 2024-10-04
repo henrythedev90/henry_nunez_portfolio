@@ -25,7 +25,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024);
     };
     const handleClickOutside = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
@@ -35,6 +35,8 @@ export default function Header() {
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", headerFunc);
+    handleResize(); // Initialize the isMobile state
+    headerFunc(); // Initialize the header state based on scroll
     return () => {
       window.removeEventListener("scroll", headerFunc);
       window.removeEventListener("resize", handleResize);
@@ -44,25 +46,14 @@ export default function Header() {
 
   const handleNavClick = (e: React.MouseEvent) => {
     if (isMobile) {
-      // Check if the clicked element or any of its parents is a Link
-      let target = e.target as HTMLElement;
-      while (target !== e.currentTarget) {
-        if (target instanceof HTMLAnchorElement) {
-          setIsMenuOpen(false);
-          return;
-        }
-        target = target.parentElement!;
+      const target = e.target as HTMLElement;
+      if (target.tagName === "A" || target.closest("a")) {
+        setIsMenuOpen(false);
       }
-
-      // If we're here, it wasn't a link, so toggle the menu
-      setIsMenuOpen((prevState) => !prevState);
     }
   };
 
   const toggleMenu = () => {
-    // if (menuRef.current) {
-    //   menuRef.current.classList.toggle("menu_active");
-    // }
     setIsMenuOpen((prevState) => !prevState);
   };
 
@@ -79,10 +70,7 @@ export default function Header() {
         <div
           className={`navigation animation ${isMenuOpen ? "menu_active" : ""}`}
           ref={menuRef}
-          onClick={(e) => {
-            e.preventDefault();
-            handleNavClick(e);
-          }}
+          onClick={handleNavClick}
         >
           <div className={"nav_menu"}>
             <ul className={"nav_list"}>
@@ -94,9 +82,10 @@ export default function Header() {
                         key={index}
                         href={item.path}
                         className={isMobile ? "nav_link" : ""}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleNavClick(e);
+                        onClick={() => {
+                          if (isMobile) {
+                            setIsMenuOpen(false);
+                          }
                         }}
                       >
                         {item.display}

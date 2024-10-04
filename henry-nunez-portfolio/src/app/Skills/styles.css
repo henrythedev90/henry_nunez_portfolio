@@ -141,7 +141,7 @@
   display: none;
 }
 .skills_page {
-  padding: 100px 20px;
+  padding: 200px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -261,6 +261,9 @@
   text-align: center;
   margin-top: 2px;
 }
+.skills_image_title {
+  text-transform: capitalize;
+}
 
 /* Tablet styles */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -271,7 +274,7 @@
     display: none;
   }
   .skills_page {
-    padding: 30px 20px;
+    padding: 140px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -287,7 +290,7 @@
   .skills_page {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 140px 20px;
     gap: 20px;
   }
   .skills_atom .skills_orbit:nth-child(2) {

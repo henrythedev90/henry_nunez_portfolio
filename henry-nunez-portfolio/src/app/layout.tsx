@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
 import "devicon/devicon.min.css";
-import Header from "./_lib/Header/header";
+import Header from "./components/Header/header";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
