@@ -42,6 +42,23 @@ export default function Header() {
     };
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent) => {
+    if (isMobile) {
+      // Check if the clicked element or any of its parents is a Link
+      let target = e.target as HTMLElement;
+      while (target !== e.currentTarget) {
+        if (target instanceof HTMLAnchorElement) {
+          setIsMenuOpen(false);
+          return;
+        }
+        target = target.parentElement!;
+      }
+
+      // If we're here, it wasn't a link, so toggle the menu
+      setIsMenuOpen((prevState) => !prevState);
+    }
+  };
+
   const toggleMenu = () => {
     // if (menuRef.current) {
     //   menuRef.current.classList.toggle("menu_active");
@@ -62,22 +79,33 @@ export default function Header() {
         <div
           className={`navigation animation ${isMenuOpen ? "menu_active" : ""}`}
           ref={menuRef}
-          onClick={isMobile ? toggleMenu : undefined}
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick(e);
+          }}
         >
           <div className={"nav_menu"}>
-            {NAV_LINKS.map((item, index) => {
-              if (index > 0) {
-                return (
-                  <Link
-                    key={index}
-                    href={item.path}
-                    className={isMobile ? "nav_link" : ""}
-                  >
-                    {item.display}
-                  </Link>
-                );
-              }
-            })}
+            <ul className={"nav_list"}>
+              {NAV_LINKS.map((item, index) => {
+                if (index > 0) {
+                  return (
+                    <li key={index} className="nav_item">
+                      <Link
+                        key={index}
+                        href={item.path}
+                        className={isMobile ? "nav_link" : ""}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleNavClick(e);
+                        }}
+                      >
+                        {item.display}
+                      </Link>
+                    </li>
+                  );
+                }
+              })}
+            </ul>
             <div className={"mobile_logo"}>
               <Link href={NAV_LINKS[0].path}>
                 <h1>

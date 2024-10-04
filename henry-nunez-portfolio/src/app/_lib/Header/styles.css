@@ -87,6 +87,22 @@
   z-index: 99;
   transition: 0.8s;
 }
+@media only screen and (min-width: 1025px) {
+  .nav_list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav_item {
+    margin-right: 20px;
+  }
+
+  .nav_link {
+    text-decoration: none;
+    color: inherit;
+  }
+}
 
 @media (max-width: 992px) {
   .navigation {
@@ -147,5 +163,13 @@
   }
   .nav_link {
     text-align: center;
+  }
+  .nav_list {
+    flex-direction: column;
+  }
+
+  .nav_item {
+    margin-right: 0;
+    margin-bottom: 10px; /* Adjust this value for vertical spacing in mobile view */
   }
 }
