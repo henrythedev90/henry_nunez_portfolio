@@ -1,7 +1,7 @@
 "use client";
 import { SKILLS_TYPE } from "../_lib/skillsType";
-import SkillsImage from "../components/SkillsImage";
 import { SKILLS } from "../_lib/skills";
+import SkillsImage from "../components/SkillsImage";
 import { useState, useEffect, useCallback } from "react";
 import "./styles.css";
 export default function Skills() {
@@ -18,10 +18,10 @@ export default function Skills() {
     );
   }, []);
 
-  // useEffect(() => {
-  //   const interval = setInterval(nextSlide, 10000);
-  //   return () => clearInterval(interval);
-  // }, [nextSlide]);
+  useEffect(() => {
+    console.log("SKILLS_TYPE:", SKILLS_TYPE);
+    console.log("SKILLS:", SKILLS);
+  }, []);
 
   const rotateText = {
     display: "inline-block",
@@ -56,40 +56,46 @@ export default function Skills() {
             className="carousel-button carousel_button_prev"
             onClick={prevSlide}
           >
-            prev
+            &lt;
           </button>
-
           <div className="carousel-container">
-            {SKILLS_TYPE.map((skillType, index) => (
-              <div
-                key={skillType.type}
-                className={`skill-type-slide ${
-                  index === currentSlide ? "active" : ""
-                }`}
-              >
-                <h2 className="skills_list_desktop_title">
-                  {skillType.type.replace("_", "-")}
-                </h2>
-                <div className="skills_grid">
-                  {SKILLS.filter((item) => item.type === skillType.type).map(
-                    (item, index) => (
+            <div
+              className="carousel-slide"
+              style={{
+                transform: `translateX(-${currentSlide * 100}%)`,
+                transition: "transform 0.5s ease-in-out",
+                display: "flex",
+              }}
+            >
+              {SKILLS_TYPE.map((skillType) => (
+                <div
+                  key={skillType.type}
+                  className="skill-type-slide"
+                  style={{ width: `${100 / SKILLS_TYPE.length}%` }}
+                >
+                  <h2 className="skills_list_desktop_title">
+                    {skillType.type.replace("_", " ")}
+                  </h2>
+                  <ul className="skills_grid">
+                    {SKILLS.filter(
+                      (skill) => skill.type === skillType.type
+                    ).map((skill, skillIndex) => (
                       <SkillsImage
-                        key={index}
-                        title={item.title}
-                        icon={item.icon}
+                        key={skillIndex}
+                        title={skill.title}
+                        icon={skill.icon}
                       />
-                    )
-                  )}
+                    ))}
+                  </ul>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-
           <button
             className="carousel-button carousel_button_next"
             onClick={nextSlide}
           >
-            next
+            &gt;
           </button>
         </div>
       </div>
