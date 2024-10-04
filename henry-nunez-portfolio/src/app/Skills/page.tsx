@@ -58,6 +58,7 @@ export default function Skills() {
           >
             prev
           </button>
+
           <div className="carousel-container">
             {SKILLS_TYPE.map((skillType, index) => (
               <div
@@ -65,12 +66,10 @@ export default function Skills() {
                 className={`skill-type-slide ${
                   index === currentSlide ? "active" : ""
                 }`}
-                style={{
-                  transform: `translateX(-${currentSlide * 100}%)`,
-                  transition: "transform 0.5s ease-in-out",
-                }}
               >
-                <h2>{skillType.type.replace("_", "-")}</h2>
+                <h2 className="skills_list_desktop_title">
+                  {skillType.type.replace("_", "-")}
+                </h2>
                 <div className="skills_grid">
                   {SKILLS.filter((item) => item.type === skillType.type).map(
                     (item, index) => (
@@ -85,6 +84,7 @@ export default function Skills() {
               </div>
             ))}
           </div>
+
           <button
             className="carousel-button carousel_button_next"
             onClick={nextSlide}
