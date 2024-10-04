@@ -65,6 +65,7 @@ export default function Skills() {
                 transform: `translateX(-${currentSlide * 100}%)`,
                 transition: "transform 0.5s ease-in-out",
                 display: "flex",
+                height: "100%",
               }}
             >
               {SKILLS_TYPE.map((skillType) => (
