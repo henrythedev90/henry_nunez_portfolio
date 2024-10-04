@@ -35,7 +35,7 @@ export const SKILLS: { icon: string; title: string; type: string }[] = [
     type: "Front_End",
   },
   {
-    icon: "nextjs-original",
+    icon: "nextjs-original-wordmark",
     title: "Next.js",
     type: "Front_End",
   },
