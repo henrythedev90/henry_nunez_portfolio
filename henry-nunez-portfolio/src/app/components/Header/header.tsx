@@ -62,7 +62,7 @@ export default function Header() {
       <div className={"nav_wrapper"}>
         <div className={"logo"}>
           <Link href={NAV_LINKS[0].path}>
-            <h1>
+            <h1 className={"logo_text"}>
               <span>H</span>enry
             </h1>
           </Link>
@@ -104,7 +104,6 @@ export default function Header() {
             </div>
           </div>
         </div>
-
         <span className={"mobile_menu_logo"}>
           <i onClick={toggleMenu}>
             <div className={"box"}>
