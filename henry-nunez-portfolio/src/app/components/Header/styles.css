@@ -27,7 +27,7 @@
   z-index: 1000;
   height: 84px;
   line-height: 80px;
-  border-bottom: 1px solid var(--vermilion);
+  border-bottom: 1px solid var(--white);
   background-color: var(--darkerBlack);
   transition: all 0.3s ease;
 }
@@ -74,7 +74,7 @@
   width: 100%;
   height: 84px;
   line-height: 80px;
-  box-shadow: 5px 5px 15px -5px var(--vermilion) !important;
+  box-shadow: 5px 5px 15px -5px var(--white) !important;
   z-index: 99;
   transition: 0.8s;
 }
@@ -148,7 +148,7 @@
   .bar3 {
     width: 35px;
     height: 4px;
-    background-color: var(--vermilion);
+    background-color: var(--white);
     margin: 6px 0;
     border-radius: 25px;
   }

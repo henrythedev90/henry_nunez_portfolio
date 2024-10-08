@@ -23,7 +23,7 @@
 /* Tablet and Desktop */
 @media only screen and (min-width: 601px) {
   .home_page {
-    padding: 150px 0px;
+    padding: 110px 0px;
     row-gap: 10px;
   }
   .card-container {
