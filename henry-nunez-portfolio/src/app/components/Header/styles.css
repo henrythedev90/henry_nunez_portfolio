@@ -66,9 +66,7 @@
 .menu_active {
   display: none !important;
 }
-.navigation {
-  display: none;
-}
+
 .header_shrink {
   position: sticky;
   top: 0;

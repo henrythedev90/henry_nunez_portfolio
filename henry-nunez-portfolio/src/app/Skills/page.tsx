@@ -7,6 +7,11 @@ import "./styles.css";
 export default function Skills() {
   const [openSkills, setOpenSkills] = useState<string | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    setFadeIn(true);
+  }, []);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % SKILLS_TYPE.length);
@@ -28,7 +33,7 @@ export default function Skills() {
     transform: "rotateX(180deg)",
   };
   return (
-    <div className="skills_page">
+    <div className={`skills_page ${fadeIn ? "fade-in" : ""}`}>
       <div className="skills_container">
         <div className="skills_atom">
           {SKILLS_TYPE.map((item, index) => {

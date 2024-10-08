@@ -19,12 +19,9 @@
 .profile_image {
   display: none;
 }
-/* Desktop */
-@media (min-width: 1200px) and (max-width: 1440px) {
-}
 
-/* Tablet */
-@media only screen and (min-width: 601px) and (max-width: 1199px) {
+/* Tablet and Desktop */
+@media only screen and (min-width: 601px) {
   .home_page {
     padding: 150px 0px;
     row-gap: 10px;
@@ -33,6 +30,12 @@
     display: none;
   }
   .home_title_desktop span span {
+    position: relative;
+    /* bottom: -1em; */
+    opacity: 0;
+    animation: move-text 0.75s forwards;
+  }
+  .home_subtitle_desktop span span {
     position: relative;
     /* bottom: -1em; */
     opacity: 0;
@@ -57,12 +60,6 @@
     font-size: 5em;
     text-align: center;
     font-weight: 600;
-  }
-  .home_subtitle_desktop span span {
-    position: relative;
-    /* bottom: -1em; */
-    opacity: 0;
-    animation: move-text 0.75s forwards;
   }
   .home_subtitle_desktop {
     font-size: 2em;

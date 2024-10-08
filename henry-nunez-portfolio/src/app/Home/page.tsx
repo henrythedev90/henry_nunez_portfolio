@@ -32,6 +32,7 @@ const Home = () => {
           <div className="card white"></div>
           <div className="card black"></div>
         </div>
+
         <div className={`first_row_desktop ${fadeIn ? "fade-in" : ""}`}>
           <h1 className="home_title_desktop">
             <SplitText text="Henry Nuñez &#x1F468;&#x1F3FE;&#x200D;&#x1F4BB;" />
