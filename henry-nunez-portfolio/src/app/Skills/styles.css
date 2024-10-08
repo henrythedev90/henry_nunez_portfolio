@@ -141,7 +141,7 @@
   display: none;
 }
 .skills_page {
-  padding: 200px 20px;
+  padding: 120px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -266,7 +266,7 @@
 }
 
 /* Tablet styles */
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
+@media only screen and (min-width: 601px) and (max-width: 1199px) {
   .skills_list_mobile {
     display: none;
   }
