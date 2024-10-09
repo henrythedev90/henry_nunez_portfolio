@@ -20,10 +20,7 @@ const Home = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    closeModal();
-    setTimeout(() => {
-      closeModal();
-    }, 5000);
+    setIsModalOpen(false);
   };
 
   useEffect(() => {
@@ -62,9 +59,19 @@ const Home = () => {
             <button className="open-modal-button" onClick={openModal}>
               Contact Me!
             </button>
-            <Modal isOpen={isModalOpen} onClose={closeModal} closeName="Nunez">
+            <Modal
+              isOpen={isModalOpen}
+              onClose={closeModal}
+              closeName="Testing Close Button"
+            >
               <h2>Contact Me</h2>
-              <form className="contact-form" onSubmit={handleSubmit}>
+              <form
+                className="contact-form"
+                onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
+                  closeModal();
+                  handleSubmit(e);
+                }}
+              >
                 <label htmlFor="name">
                   Name:
                   <input type="text" placeholder="Name" required />

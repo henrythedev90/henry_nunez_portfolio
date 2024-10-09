@@ -10,18 +10,19 @@ export const Modal = ({
 }: {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: () => void;
   children: React.ReactNode;
   closeName: string;
 }) => {
   const [isClosing, setIsClosing] = useState(false);
 
   const handleClose = () => {
+    debugger;
     setIsClosing(true);
   };
 
   const handleAnimationEnd = () => {
     if (isClosing) {
+      debugger;
       setIsClosing(false);
       onClose();
     }

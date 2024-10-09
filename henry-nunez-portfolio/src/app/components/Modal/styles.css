@@ -20,7 +20,6 @@
   width: 90%;
   max-width: 500px;
   animation: slideDown 0.3s;
-  /* animation: slit-out-vertical 0.5s ease-in both; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   animation-fill-mode: forwards;
 }
