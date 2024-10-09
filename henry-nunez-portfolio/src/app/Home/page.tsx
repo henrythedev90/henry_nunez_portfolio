@@ -1,12 +1,30 @@
 "use client";
 import React from "react";
-import "./styles.css";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { Modal } from "../components/Modal/Modal";
 import SplitText from "../components/SplitText";
+import "./styles.css";
 
 const Home = () => {
   const [fadeIn, setFadeIn] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    closeModal();
+    setTimeout(() => {
+      closeModal();
+    }, 5000);
+  };
 
   useEffect(() => {
     setFadeIn(true);
@@ -40,6 +58,31 @@ const Home = () => {
           <h2 className="home_subtitle_desktop">
             <SplitText text="Software Engineer &#128187;" />
           </h2>
+          <div className="contact-container">
+            <button className="open-modal-button" onClick={openModal}>
+              Contact Me!
+            </button>
+            <Modal isOpen={isModalOpen} onClose={closeModal} closeName="Nunez">
+              <h2>Contact Me</h2>
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <label htmlFor="name">
+                  Name:
+                  <input type="text" placeholder="Name" required />
+                </label>
+                <label htmlFor="email">
+                  Email:
+                  <input type="email" placeholder="Email" required />
+                </label>
+                <label htmlFor="message">
+                  Message:
+                  <textarea placeholder="Message" required />
+                </label>
+                <button className="submit-button" type="submit">
+                  Submit
+                </button>
+              </form>
+            </Modal>
+          </div>
         </div>
       </div>
       <div className={`second_row first_column ${fadeIn ? "fade-in" : ""}`}>
