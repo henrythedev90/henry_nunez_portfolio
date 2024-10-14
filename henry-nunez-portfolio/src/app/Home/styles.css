@@ -76,6 +76,7 @@
     border-bottom: 4px solid var(--darkerBlack);
     width: 100%;
     padding: 78px;
+    margin-top: 50px;
   }
   .card-container-desktop {
     display: flex;

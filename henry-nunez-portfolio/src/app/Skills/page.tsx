@@ -23,11 +23,6 @@ export default function Skills() {
     );
   }, []);
 
-  useEffect(() => {
-    console.log("SKILLS_TYPE:", SKILLS_TYPE);
-    console.log("SKILLS:", SKILLS);
-  }, []);
-
   const rotateText = {
     display: "inline-block",
     transform: "rotateX(180deg)",
