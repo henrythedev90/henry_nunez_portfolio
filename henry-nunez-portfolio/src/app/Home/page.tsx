@@ -92,7 +92,7 @@ const Home = () => {
           </h1>
 
           <p>
-            I'm Henry Nunez and I have a little over 4 years of dedicated
+            My name is Henry Nuñez and I have a little over 4 years of dedicated
             experience as a software engineer, I’ve contributed to innovative
             fintech solutions and supported non-profit organizations with
             impactful front-end work. Known for my problem-solving abilities,
