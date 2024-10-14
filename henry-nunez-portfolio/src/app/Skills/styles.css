@@ -141,7 +141,7 @@
   display: none;
 }
 .skills_page {
-  padding: 120px 20px;
+  padding: 50px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -288,7 +288,7 @@
     display: none;
   }
   .skills_page {
-    padding: 120px 20px;
+    padding: 50px 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -304,7 +304,7 @@
   .skills_page {
     display: flex;
     flex-direction: column;
-    padding: 110px 20px;
+    padding: 20px 10px;
     gap: 20px;
   }
   .skills_atom .skills_orbit:nth-child(2) {

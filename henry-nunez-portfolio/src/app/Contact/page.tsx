@@ -28,4 +28,5 @@ export default function Contact() {
   //     </Modal>
   //   </div>
   // );
+  return <div>Contact</div>;
 }
