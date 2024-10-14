@@ -9,7 +9,12 @@ import "./styles.css";
 const Home = () => {
   const [fadeIn, setFadeIn] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const NA = "🌎";
+  const AF = "🌍";
+  const AS = "🌏";
 
+  const globalEmoji = [NA, AF, AS];
+  const [currentEmoji, setCurrentEmoji] = useState(globalEmoji[0]);
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -24,8 +29,13 @@ const Home = () => {
     closeModal();
   };
 
+  let i = 0;
   useEffect(() => {
     setFadeIn(true);
+    const interval = setInterval(() => {
+      setCurrentEmoji(globalEmoji[i++ % globalEmoji.length]);
+    }, 300);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -87,9 +97,7 @@ const Home = () => {
       </div>
       <div className={`second_row first_column ${fadeIn ? "fade-in" : ""}`}>
         <div className="card-container-mobile card-container-desktop">
-          <h1>
-            Hello World! <span>&#x1F468;&#x1F3FE;&#x200D;&#x1F4BB;</span>
-          </h1>
+          <h1>Hello {currentEmoji}</h1>
 
           <p>
             My name is Henry Nuñez and I have a little over 4 years of dedicated
