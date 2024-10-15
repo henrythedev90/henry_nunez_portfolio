@@ -75,3 +75,26 @@
   background-color: var(--cerulean);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
+
+.success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  text-shadow: 0 -2px 20px var(--cerulean);
+  font-size: 1.5rem;
+  text-align: center;
+}
+.fade-in-top {
+  animation: fade-in-top 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@keyframes fade-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

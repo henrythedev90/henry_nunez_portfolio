@@ -12,10 +12,8 @@ export default async function handler(
   const content = {
     to: "henrythedev90@gmail.com",
     from: "henrythedev90@gmail.com",
-    subject: "New Message from Portfolio",
-    client_name: name,
-    client_email: email,
-    text: message,
+    subject: `New Message from ${name}, ${email}`,
+    text: `${name} "\n" ${email} "\n" ${message}`,
   };
   try {
     await mail.send(content).then(() => console.log({ content }));

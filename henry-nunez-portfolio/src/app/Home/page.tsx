@@ -4,11 +4,16 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Modal } from "../components/Modal/Modal";
 import SplitText from "../components/SplitText";
+import { ContactForm } from "../components/ContactForm/ContactForm";
+import useContactForm from "../hooks/useContactForm";
 import "./styles.css";
 
 const Home = () => {
+  const { values, isSubmitted, handleChange, handleSubmit } = useContactForm();
   const [fadeIn, setFadeIn] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
   const NA = "🌎";
   const AF = "🌍";
   const AS = "🌏";
@@ -23,10 +28,17 @@ const Home = () => {
     setIsModalOpen(false);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    debugger;
-    e.preventDefault();
-    closeModal();
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    try {
+      await handleSubmit(e);
+      setShowSuccessMessage(true);
+      setTimeout(() => {
+        closeModal();
+        setShowSuccessMessage(false);
+      }, 5000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   let i = 0;
@@ -73,24 +85,24 @@ const Home = () => {
               Contact Me!
             </button>
             <Modal isOpen={isModalOpen} onClose={closeModal} closeName="X">
-              <h2>Let's get in touch!</h2>
-              <form className="contact-form" onSubmit={handleSubmit}>
-                <label htmlFor="name">
-                  Name:
-                  <input type="text" placeholder="Name" required />
-                </label>
-                <label htmlFor="email">
-                  Email:
-                  <input type="email" placeholder="Email" required />
-                </label>
-                <label htmlFor="message">
-                  Message:
-                  <textarea placeholder="Message" required />
-                </label>
-                <button className="submit-button" type="submit">
-                  Submit
-                </button>
-              </form>
+              {isSubmitted ? (
+                <div
+                  className={`success-message ${
+                    isSubmitted ? "fade-in-top" : ""
+                  }`}
+                >
+                  <p>Message sent successfully!</p>
+                </div>
+              ) : (
+                <>
+                  <h2>Let&apos;s get in touch!</h2>
+                  <ContactForm
+                    values={values}
+                    handleChange={handleChange}
+                    handleSubmit={handleFormSubmit}
+                  />
+                </>
+              )}
             </Modal>
           </div>
         </div>
