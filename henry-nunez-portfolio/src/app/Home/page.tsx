@@ -34,7 +34,7 @@ const Home = () => {
     setFadeIn(true);
     const interval = setInterval(() => {
       setCurrentEmoji(globalEmoji[i++ % globalEmoji.length]);
-    }, 300);
+    }, 500);
     return () => clearInterval(interval);
   }, []);
 
@@ -97,7 +97,7 @@ const Home = () => {
       </div>
       <div className={`second_row first_column ${fadeIn ? "fade-in" : ""}`}>
         <div className="card-container-mobile card-container-desktop">
-          <h1>Hello {currentEmoji}</h1>
+          <h1>Hello World! {currentEmoji}</h1>
 
           <p>
             My name is Henry Nuñez and I have a little over 4 years of dedicated
@@ -106,7 +106,11 @@ const Home = () => {
             impactful front-end work. Known for my problem-solving abilities,
             I’ve consistently delivered effective resolutions to critical web
             application issues, combining technical expertise with a passion for
-            making a difference.
+            making a difference. I’m excited about the possibility of
+            collaborating with like-minded individuals to create innovative
+            solutions. With my experience, I’m confident that together we can
+            tackle challenges and make a meaningful impact. Let’s connect and
+            explore how our skills and goals align!
           </p>
         </div>
       </div>

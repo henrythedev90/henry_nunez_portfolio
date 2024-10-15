@@ -92,7 +92,7 @@
     border-radius: 10px;
     padding: 10px;
     text-align: center;
-    font-size: 1.9em;
+    font-size: 50px;
   }
   .card-container-mobile,
   .card-container-desktop {
@@ -251,7 +251,7 @@
     align-items: center;
   }
   .second_row h1 {
-    font-size: 24px;
+    font-size: 25px;
     text-align: center;
     padding: 10px;
     border: 2px solid var(--white);
@@ -262,11 +262,12 @@
   }
   .second_row p {
     text-align: center;
-    padding: 10px;
+    padding: 14px;
     border: 2px solid var(--white);
     border-radius: 10px;
     background-color: var(--darkerBlack);
     color: var(--white);
+    line-height: 1.5;
   }
   .image_card {
     overflow: hidden;
