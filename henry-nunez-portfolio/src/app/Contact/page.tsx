@@ -17,6 +17,7 @@ export default function Contact() {
           </div>
         ) : (
           <>
+            <h2>Let&apos;s get in touch!</h2>
             <ContactForm
               values={values}
               handleChange={handleChange}
