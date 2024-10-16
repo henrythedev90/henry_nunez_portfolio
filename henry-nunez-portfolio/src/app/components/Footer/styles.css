@@ -10,7 +10,7 @@
 }
 
 @media (max-width: 600px) {
-  footer {
+  /* footer {
     background-color: var(--darkerBlack);
     color: white;
     text-align: center;
@@ -76,5 +76,5 @@
     user-select: none;
     text-align: center;
     font-size: 1rem;
-  }
+  } */
 }
