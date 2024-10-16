@@ -12,14 +12,13 @@ const Footer = () => {
           {FOOTER_LINKS.map((icon, index) => {
             return (
               <Link key={index} href={icon.path} className="footer_link">
-                <span>{icon.display}</span>
+                <span>{icon.display.trim().replace("", " ")}</span>
               </Link>
             );
           })}
         </div>
-        <div>
-          <h6>created by Henry Nuñez</h6>
-
+        <div className="footer_copyright_container">
+          <h6>Created by Henry Nuñez</h6>
           <p>
             &copy; Copyright {currentYear} Developed by Henry Nuñez. All right
             reserved.{" "}
