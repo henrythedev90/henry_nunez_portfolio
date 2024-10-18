@@ -6,7 +6,6 @@ import Skills from "./components/Skills/page";
 import Contact from "./components/Contact/page";
 import Header from "./components/Header/header";
 import Footer from "./components/Footer/Footer";
-import ResumePDF from "./components/ResumePDF";
 
 import "./globals.css";
 
@@ -31,7 +30,7 @@ const Page = () => {
         <Header />
         <Home />
         <Skills />
-        {isMobile ? <Contact /> : <ResumePDF />}
+        {isMobile ? <Contact /> : <div>hello</div>}
         <Footer />
       </Fragment>
     </div>
