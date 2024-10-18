@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import "./styles.css";
-import { ContactForm } from "../components/ContactForm/ContactForm";
-import useContactForm from "../hooks/useContactForm";
+import { ContactForm } from "../ContactForm/ContactForm";
+import useContactForm from "../../hooks/useContactForm";
 
 export default function Contact() {
   const { values, isSubmitted, handleChange, handleSubmit } = useContactForm();

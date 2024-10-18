@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "devicon/devicon.min.css";
 import Header from "./components/Header/header";
-
+import Footer from "./components/Footer/Footer";
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
 //   variable: "--font-geist-sans",
@@ -27,10 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <Header />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,10 +1,15 @@
 "use client";
-import React from "react";
-import { Fragment, useState, useEffect } from "react";
-import Home from "./Home/page";
-import Skills from "./Skills/page";
-import Contact from "./Contact/page";
-import Layout from "./components/Layout/Layout";
+import React, { Fragment } from "react";
+import { useState, useEffect } from "react";
+import Home from "./components/Home/page";
+import Skills from "./components/Skills/page";
+import Contact from "./components/Contact/page";
+import Header from "./components/Header/header";
+import Footer from "./components/Footer/Footer";
+import ResumePDF from "./components/ResumePDF";
+
+import "./globals.css";
+
 const Page = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -21,11 +26,15 @@ const Page = () => {
   }, []);
 
   return (
-    <Layout>
-      <Home />
-      <Skills />
-      {isMobile && <Contact />}
-    </Layout>
+    <div id="app">
+      <Fragment>
+        <Header />
+        <Home />
+        <Skills />
+        {isMobile ? <Contact /> : <ResumePDF />}
+        <Footer />
+      </Fragment>
+    </div>
   );
 };
 

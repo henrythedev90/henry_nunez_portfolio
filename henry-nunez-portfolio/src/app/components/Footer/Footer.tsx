@@ -9,13 +9,11 @@ const Footer = () => {
     <footer>
       <div className="footer_container">
         <div className="footer_links_container">
-          {FOOTER_LINKS.map((icon, index) => {
-            return (
-              <Link key={index} href={icon.path} className="footer_link">
-                <span>{icon.display.trim().replace("", " ")}</span>
-              </Link>
-            );
-          })}
+          {FOOTER_LINKS.map((icon) => (
+            <Link key={icon.path} href={icon.path} className="footer_link">
+              <span>{icon.display.trim()}</span>
+            </Link>
+          ))}
         </div>
         <div className="footer_copyright_container">
           <h6>Created by Henry Nuñez</h6>

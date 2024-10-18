@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/skills-image.module.css";
 
 interface SkillsImageProps {
   title: string;

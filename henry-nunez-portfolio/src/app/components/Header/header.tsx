@@ -10,7 +10,20 @@ export default function Header() {
   const headerRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const headerFunc = () => {
+  const debounce = <T extends (...args: unknown[]) => void>(
+    func: T,
+    delay: number
+  ) => {
+    let timeoutId: ReturnType<typeof setTimeout>;
+    return (...args: Parameters<T>) => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => func(...args), delay);
+    };
+  };
+
+  const headerFunc = debounce(() => {
     if (headerRef.current) {
       if (
         document.body.scrollTop > 5 ||
@@ -21,7 +34,7 @@ export default function Header() {
         headerRef.current?.classList?.remove("header_shrink");
       }
     }
-  };
+  }, 100);
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,15 +45,25 @@ export default function Header() {
         setIsMenuOpen(false);
       }
     };
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        document.body.classList.add("no-bounce");
+      } else {
+        document.body.classList.remove("no-bounce");
+      }
+    };
+    // document.body.style.overflow = "hidden";
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", headerFunc);
+    window.addEventListener("scroll", handleScroll);
     handleResize(); // Initialize the isMobile state
     headerFunc(); // Initialize the header state based on scroll
     return () => {
       window.removeEventListener("scroll", headerFunc);
       window.removeEventListener("resize", handleResize);
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -73,7 +96,7 @@ export default function Header() {
           onClick={handleNavClick}
         >
           <div className={"nav_menu"}>
-            <ul className={"nav_list"}>
+            {/* <ul className={"nav_list"}>
               {NAV_LINKS.map((item, index) => {
                 if (index > 0) {
                   return (
@@ -94,7 +117,10 @@ export default function Header() {
                   );
                 }
               })}
-            </ul>
+            </ul> */}
+            <div className={"nav_resume"}>
+              <button>Resume</button>
+            </div>
             <div className={"mobile_logo"}>
               <Link href={NAV_LINKS[0].path}>
                 <h1>
@@ -104,7 +130,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <span className={"mobile_menu_logo"}>
+        {/* <span className={"mobile_menu_logo"}>
           <i onClick={toggleMenu}>
             <div className={"box"}>
               <div className={"bar1"}></div>
@@ -112,7 +138,7 @@ export default function Header() {
               <div className={"bar3"}></div>
             </div>
           </i>
-        </span>
+        </span> */}
       </div>
     </nav>
   );

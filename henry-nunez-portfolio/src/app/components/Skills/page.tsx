@@ -1,7 +1,7 @@
 "use client";
-import { SKILLS_TYPE } from "../_lib/skillsType";
-import { SKILLS } from "../_lib/skills";
-import SkillsImage from "../components/SkillsImage";
+import { SKILLS_TYPE } from "../../_lib/skillsType";
+import { SKILLS } from "../../_lib/skills";
+import SkillsImage from "./SkillsImage";
 import { useState, useEffect, useCallback } from "react";
 import "./styles.css";
 export default function Skills() {

@@ -41,14 +41,58 @@ html {
     var(--atomicTangerine) 82% 86%,
     var(--candyAppleRed) 99%
   );
-  height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+html {
   height: 100%;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain !important;
+  overscroll-behavior-y: none !important;
+  overscroll-behavior-x: none !important;
+  scroll-snap-type: none !important;
+  display: grid;
+  grid-template-columns: 10% minmax(auto, 80%) 10%;
+}
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 10% minmax(auto, 80%) 10%;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    grid-template-columns: 10% minmax(auto, 80%) 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+}
+
+#app {
+  min-height: 100vh;
+  grid-column: 2 / 3;
+}
+.footer {
+  margin-top: auto; /* Push the footer to the bottom */
+}
+.hidden {
+  display: none;
+}
+.block {
+  display: block;
 }
 
 @layer utilities {

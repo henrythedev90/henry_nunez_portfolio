@@ -2,10 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Modal } from "../components/Modal/Modal";
-import SplitText from "../components/SplitText";
-import { ContactForm } from "../components/ContactForm/ContactForm";
-import useContactForm from "../hooks/useContactForm";
+import { Modal } from "../Modal/Modal";
+import SplitText from "./SplitText";
+import { ContactForm } from "../ContactForm/ContactForm";
+import useContactForm from "../../hooks/useContactForm";
 import "./styles.css";
 
 const Home = () => {
@@ -60,8 +60,7 @@ const Home = () => {
               alt="profile"
               width={200} // Increased width for better clarity
               height={200} // Increased height for better clarity
-              layout="responsive" // Makes the image responsive
-              sizes="(max-width: 600px) 100vw"
+              sizes="(max-width: 600px) 100vw 200px"
               priority
               className="profile_image"
             />

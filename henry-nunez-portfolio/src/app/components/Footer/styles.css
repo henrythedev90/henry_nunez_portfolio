@@ -9,6 +9,47 @@
   --myrtleGreen: #267675;
 }
 
+@media (min-width: 601px) {
+  footer {
+    position: fixed;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--darkerBlack);
+    margin-top: auto;
+  }
+  .footer_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 10px;
+  }
+  .footer_links_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+  }
+  .footer_link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    width: 130px;
+    border-left: 1px solid var(--white);
+    border-right: 1px solid var(--white);
+  }
+  .footer_copyright_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: end;
+  }
+}
+
 @media (max-width: 601px) {
   footer {
     bottom: 0;
@@ -22,6 +63,7 @@
     border-top: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
     width: 100%;
+    position: fixed;
   }
   .footer_container {
     padding-top: 5px;
@@ -31,59 +73,14 @@
     display: flex;
     flex-direction: row;
   }
+  .footer_link {
+    text-align: center;
+    border-left: 1px solid var(--white);
+    border-right: 1px solid var(--white);
+  }
   .footer_link:hover {
     text-decoration: underline;
   }
-  /* 
-  .footer_link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset var(--itemWidthMinus) var(--itemWidthMinus) 0 black,
-      inset var(--itemWidth) var(--itemWidthMinus) 0 green,
-      inset var(--itemWidthMinus) var(--itemWidth) 0 blue,
-      inset var(--itemWidth) var(--itemWidth) 0 yellow, 0 0 20px silver;
-    transition: box-shadow ease-in-out 0.6s, color ease-in-out 0.5s;
-    width: var(--itemWidth);
-    height: var(--itemWidth);
-    border-radius: 50%;
-    border: 1px solid var(--white);
-    text-align: center;
-    background: center / 50% no-repeat;
-    cursor: pointer;
-    color: white;
-    font-size: calc(var(--itemWidth) / 7);
-  }
-  .footer_link:hover {
-    box-shadow: inset 0 0 0 transparent, inset 0 0 0 transparent,
-      inset 0 0 0 transparent, inset 0 0 0 transparent, 0 0 20px silver;
-    color: transparent;
-  }
-  .footer_links_container {
-    --itemWidth: min(75px, 15vw);
-    --itemWidthMinus: calc(-1 * var(--itemWidth));
-    height: max-content;
-    width: max-content;
-    display: grid;
-    grid-template-columns: repeat(3, calc(3vw + var(--itemWidth)));
-    font-family: "Averia Serif Libre";
-    margin-bottom: 5px;
-  }
-  .footer_link:first-of-type {
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/New_York_Times_T_icon.svg/359px-New_York_Times_T_icon.svg.png);
-  }
-  .footer_link:nth-of-type(2) {
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/bf/Washington_Post_favicon.png);
-  }
-  .footer_link:nth-of-type(3) {
-    background-image: url(https://pbs.twimg.com/profile_images/1043218383141928961/i7P3LHYw_400x400.jpg);
-  }
-  .footer_link > span {
-    width: 80%;
-    user-select: none;
-    text-align: center;
-    font-size: 1rem;
-  } */
   .footer_copyright_container {
     font-size: 0.75rem;
   }

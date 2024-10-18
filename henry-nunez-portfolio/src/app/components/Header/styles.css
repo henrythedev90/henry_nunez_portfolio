@@ -18,7 +18,6 @@
     max-width: 100%;
   }
 }
-
 .nav_bar {
   position: fixed;
   top: 0;
@@ -78,6 +77,14 @@
   z-index: 99;
   transition: 0.8s;
 }
+.no-bounce {
+  overflow: hidden;
+}
+
+/* .nav_resume {
+  background-color: var(--white);
+} */
+
 @media only screen and (min-width: 1025px) {
   .nav_list {
     display: flex;
