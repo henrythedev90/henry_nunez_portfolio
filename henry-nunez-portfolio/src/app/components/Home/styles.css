@@ -319,72 +319,25 @@
     animation: slideIn 0.5s ease forwards;
     opacity: 0;
   }
-
-  /* Specific styles for black and white cards */
-  .black {
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-    border: 4px solid var(--cerulean);
-    background-color: #000;
-    /* border: 4px solid #000; */
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
-
-  .white {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #000;
-    border: 4px solid #fff;
-  }
-
-  /* Stacking order and offsets */
-  .card:nth-child(1) {
-    top: 0;
-    left: 0;
-    z-index: 4;
-    transform: translate(-10px, -50px);
-    animation-delay: 0.1s;
-  }
-
-  .card:nth-child(2) {
-    top: 10px;
-    left: 10px;
-    z-index: 3;
-    transform: translate(-8px, -40px);
-    animation-delay: 0.2s;
-  }
-
-  .card:nth-child(3) {
-    top: 20px;
-    left: 20px;
-    z-index: 2;
-    transform: translate(-6px, -30px);
-    animation-delay: 0.3s;
-  }
-
-  .card:nth-child(4) {
-    top: 30px;
-    left: 30px;
-    z-index: 1;
-    transform: translate(-4px, -20px);
-    animation-delay: 0.4s;
-  }
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  .fade-in {
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+}
+.fade-in {
+  opacity: 1;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

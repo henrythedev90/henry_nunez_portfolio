@@ -54,7 +54,7 @@ const Home = () => {
     <div className="home_page">
       <div className="first_row first_column">
         <div className="card-container image_container">
-          <div className="card white image_card">
+          <div className="card image_card">
             <Image
               src="/profile.jpg"
               alt="profile"
@@ -65,9 +65,6 @@ const Home = () => {
               className="profile_image"
             />
           </div>
-          <div className="card black"></div>
-          <div className="card white"></div>
-          <div className="card black"></div>
         </div>
 
         <div className={`first_row_desktop ${fadeIn ? "fade-in" : ""}`}>
