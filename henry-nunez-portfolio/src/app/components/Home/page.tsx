@@ -66,11 +66,9 @@ const Home = () => {
           <div className="home_title_container">
             <h1 className="home_title_desktop">
               <SplitText text="Henry Nuñez" />
-              {/* <span> &#x1F468;&#x1F3FE;&#x200D;&#x1F4BB;</span> */}
             </h1>
             <h2 className="home_subtitle_desktop">
               <SplitText text="Software Engineer" />
-              {/* <span> &#128187;</span> */}
             </h2>
             <div className="contact-container">
               <button className="open-modal-button" onClick={openModal}>
@@ -102,8 +100,7 @@ const Home = () => {
       </div>
       <div className={`second_row first_column ${fadeIn ? "fade-in" : ""}`}>
         <div className="card-container-mobile card-container-desktop">
-          <h1>Hello World! {currentEmoji}</h1>
-
+          <h1>Hello World {currentEmoji}</h1>
           <p>
             My name is Henry Nuñez and I have a little over 4 years of dedicated
             experience as a software engineer, I’ve contributed to innovative
