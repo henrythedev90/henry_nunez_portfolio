@@ -3,7 +3,7 @@
   --cerulean: #0a82a2;
   --cadetGray: #7d99a9;
   --atomicTangerine: #e39172;
-  --candyAppleRed: #f33721;
+  --imperialRed: #f53948;
   --vermilion: #fd3938;
   --darkerBlack: #030201;
   --myrtleGreen: #267675;
@@ -42,24 +42,26 @@
     animation: move-text 0.75s forwards;
   }
   .home_title_desktop span span {
-    color: var(--white);
+    color: var(--imperialRed);
   }
   .home_title_desktop span span:nth-child(2n) {
-    color: var(--cerulean);
+    color: #c42d39;
   }
   .home_title_desktop span span:nth-child(3n) {
-    color: var(--cadetGray);
+    color: #93222b;
   }
   .home_title_desktop span span:nth-child(4n) {
-    color: var(--cerulean);
+    color: #62161c;
   }
   .home_title_desktop span span:nth-child(5n) {
-    color: var(--myrtleGreen);
+    color: #310b0e;
   }
   .home_title_desktop {
     font-size: 5em;
     text-align: center;
     font-weight: 600;
+    font-family: "Impact";
+    letter-spacing: 0.06em;
   }
   .home_subtitle_desktop {
     font-size: 2em;
@@ -294,10 +296,6 @@
     line-height: 1.5;
   }
 
-  .profile_image {
-    display: block;
-    border-radius: 10px;
-  }
   /* Container for the cards */
   .card-container {
     position: relative;
@@ -312,7 +310,6 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     animation: slideIn 0.5s ease forwards;
     max-width: 100vw 200px;
@@ -337,22 +334,25 @@
     position: absolute; /* Ensure the text is positioned absolutely */
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to center */
+    transform: translate(-50%, -50%);
     z-index: 2; /* Ensure it is on top of the card */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--candyAppleRed);
+    color: var(--imperialRed);
     font-family: "Impact";
     font-size: 5rem;
   }
   .image_card_text > :first-child {
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
+    margin-bottom: -3.2rem; /* Adjust margin to bring elements closer */
+    margin-left: 6px;
   }
   .image_card_text > :last-child {
     letter-spacing: 0.06em;
+    margin-top: 0; /* Remove any top margin to bring elements closer */
   }
 }
 @keyframes slideIn {
