@@ -54,16 +54,11 @@ const Home = () => {
     <div className="home_page">
       <div className="first_row first_column">
         <div className="card-container image_container">
-          <div className="card image_card">
-            <Image
-              src="/profile.jpg"
-              alt="profile"
-              width={200} // Increased width for better clarity
-              height={200} // Increased height for better clarity
-              sizes="(max-width: 600px) 100vw 200px"
-              priority
-              className="profile_image"
-            />
+          <div className="card">
+            <div className="image_card_text">
+              <p>Hello</p>
+              <p>World</p>
+            </div>
           </div>
         </div>
 
