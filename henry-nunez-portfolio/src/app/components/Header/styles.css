@@ -8,7 +8,7 @@
   --cadetGray: #7d99a9;
   --atomicTangerine: #e39172;
   --candyAppleRed: #f33721;
-  --vermilion: #fd3938;
+  --imperialRed: #f53948;
   --darkerBlack: #030201;
   --myrtleGreen: #267675;
 }
@@ -26,7 +26,7 @@
   z-index: 1000;
   height: 84px;
   line-height: 80px;
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid var(--imperialRed);
   background-color: var(--darkerBlack);
   transition: all 0.3s ease;
 }
@@ -176,6 +176,12 @@
 
   .logo_text {
     padding-left: 20px;
+    font-family: "Impact", sans-serif;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.08em;
+    font-size: 1.8rem;
+    color: var(--imperialRed);
   }
 }
 @media only screen and (min-width: 601px) and (max-width: 1024px) {

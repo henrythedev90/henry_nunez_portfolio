@@ -53,7 +53,7 @@ const Home = () => {
   return (
     <div className="home_page">
       <div className="first_row first_column">
-        <div className="card-container image_container">
+        <div className="card-container">
           <div className="card">
             <div className="image_card_text">
               <p>Hello</p>
@@ -63,39 +63,41 @@ const Home = () => {
         </div>
 
         <div className={`first_row_desktop ${fadeIn ? "fade-in" : ""}`}>
-          <h1 className="home_title_desktop">
-            <SplitText text="Henry Nuñez" />
-            <span> &#x1F468;&#x1F3FE;&#x200D;&#x1F4BB;</span>
-          </h1>
-          <h2 className="home_subtitle_desktop">
-            <SplitText text="Software Engineer" />
-            <span> &#128187;</span>
-          </h2>
-          <div className="contact-container">
-            <button className="open-modal-button" onClick={openModal}>
-              Contact Me!
-            </button>
-            <Modal isOpen={isModalOpen} onClose={closeModal} closeName="X">
-              {isSubmitted ? (
-                <div
-                  className={`success-message ${
-                    isSubmitted ? "fade-in-top" : ""
-                  }`}
-                >
-                  <p>Message sent successfully!</p>
-                </div>
-              ) : (
-                <>
-                  <h2>Let&apos;s get in touch!</h2>
-                  <ContactForm
-                    values={values}
-                    handleChange={handleChange}
-                    handleSubmit={handleFormSubmit}
-                  />
-                </>
-              )}
-            </Modal>
+          <div className="home_title_container">
+            <h1 className="home_title_desktop">
+              <SplitText text="Henry Nuñez" />
+              {/* <span> &#x1F468;&#x1F3FE;&#x200D;&#x1F4BB;</span> */}
+            </h1>
+            <h2 className="home_subtitle_desktop">
+              <SplitText text="Software Engineer" />
+              {/* <span> &#128187;</span> */}
+            </h2>
+            <div className="contact-container">
+              <button className="open-modal-button" onClick={openModal}>
+                Contact Me!
+              </button>
+            </div>
           </div>
+          <Modal isOpen={isModalOpen} onClose={closeModal} closeName="X">
+            {isSubmitted ? (
+              <div
+                className={`success-message ${
+                  isSubmitted ? "fade-in-top" : ""
+                }`}
+              >
+                <p>Message sent successfully!</p>
+              </div>
+            ) : (
+              <>
+                <h2>Let&apos;s get in touch!</h2>
+                <ContactForm
+                  values={values}
+                  handleChange={handleChange}
+                  handleSubmit={handleFormSubmit}
+                />
+              </>
+            )}
+          </Modal>
         </div>
       </div>
       <div className={`second_row first_column ${fadeIn ? "fade-in" : ""}`}>
