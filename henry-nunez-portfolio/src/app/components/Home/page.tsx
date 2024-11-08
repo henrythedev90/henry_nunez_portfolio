@@ -5,6 +5,7 @@ import { Modal } from "../Modal/Modal";
 import SplitText from "./SplitText";
 import { ContactForm } from "../ContactForm/ContactForm";
 import useContactForm from "../../hooks/useContactForm";
+import Image from "next/image";
 import "./styles.css";
 
 const Home = () => {
@@ -51,6 +52,15 @@ const Home = () => {
       <div className="first_row first_column">
         <div className="card-container">
           <div className="card">
+            <Image
+              src="/profile.avif"
+              alt=" image of Henry Nuñez running"
+              width={300}
+              height={400}
+              priority
+              placeholder="blur"
+              blurDataURL="/profile.avif"
+            />
             <div className="image_card_text">
               <p>Hello</p>
               <p>World</p>
