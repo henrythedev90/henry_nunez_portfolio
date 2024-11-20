@@ -340,7 +340,7 @@
   .skills_page {
     display: flex;
     flex-direction: column;
-    padding: 20px 10px;
+    padding: 10px 10px;
     gap: 20px;
     border-bottom: 2px solid var(--white);
     border-top: 2px solid var(--white);

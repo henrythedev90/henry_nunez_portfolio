@@ -322,12 +322,11 @@
   .card-container-mobile {
     background-color: rgba(0, 0, 0, 0.3);
     border: 2px solid var(--darkerBlack);
-    padding: 20px 5px;
+    padding: 6px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   }
   .second_row {
-    /* padding: 6px 5px 20px; */
-    /* padding-bottom: 20px; */
+    padding: 10px 8px;
     opacity: 0;
     transition: opacity 2s ease-in;
     display: flex;
@@ -344,7 +343,7 @@
     letter-spacing: 0.05em; /* Slightly reduced letter-spacing */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Reduced shadow for a softer effect */
     font-style: oblique; /* Removed angle for better compatibility */
-    font-size: 0.99rem; /* Adjusted font size for better visibility on smaller screens */
+    font-size: 1.02rem; /* Adjusted font size for better visibility on smaller screens */
   }
 
   /* Container for the cards */
