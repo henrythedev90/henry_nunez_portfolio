@@ -36,6 +36,9 @@
     align-items: center;
     flex-wrap: wrap;
   }
+  .first_row {
+    margin-top: 20px;
+  }
   .first_row_desktop {
     background-color: rgba(0, 0, 0, 0.3);
     position: relative;

@@ -116,18 +116,6 @@ export default function Skills() {
                 setOpenSkills(
                   openSkills === skillType.type ? null : skillType.type
                 );
-                const titleElement = document.querySelector(
-                  `.skills_${skillType.type
-                    .toLowerCase()
-                    .replace(" ", "_")} .skills_list_mobile_title`
-                );
-                if (titleElement) {
-                  titleElement.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                    inline: "center",
-                  });
-                }
               }}
             >
               <h1 className="skills_list_mobile_title">
