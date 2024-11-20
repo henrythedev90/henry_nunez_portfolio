@@ -53,13 +53,13 @@ const Home = () => {
         <div className="card-container">
           <div className="card">
             <Image
-              src="/profile.avif"
+              src="/profile_resize.avif"
               alt=" image of Henry Nuñez running"
-              width={300}
-              height={400}
+              width={200}
+              height={300}
               priority
               placeholder="blur"
-              blurDataURL="/profile.avif"
+              blurDataURL="/profile_resize.avif"
             />
             <div className="image_card_text">
               <p>Hello</p>
