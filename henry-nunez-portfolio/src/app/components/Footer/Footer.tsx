@@ -16,10 +16,9 @@ const Footer = () => {
           ))}
         </div>
         <div className="footer_copyright_container">
-          <p>Created by Henry Nuñez</p>
           <p>
-            &copy; Copyright {currentYear} Developed by Henry Nuñez. All right
-            reserved.{" "}
+            &copy; Copyright {currentYear} Developed and created by Henry Nuñez.
+            All right reserved.{" "}
           </p>
         </div>
       </div>

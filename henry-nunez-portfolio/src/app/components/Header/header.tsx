@@ -6,9 +6,7 @@ import Link from "next/link";
 
 export default function Header() {
   const [isMobile, setIsMobile] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
-  const menuRef = useRef<HTMLDivElement>(null);
 
   const debounce = <T extends (...args: unknown[]) => void>(
     func: T,
@@ -40,11 +38,6 @@ export default function Header() {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1024);
     };
-    const handleClickOutside = (e: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-        setIsMenuOpen(false);
-      }
-    };
     const handleScroll = () => {
       if (window.scrollY > 0) {
         document.body.classList.add("no-bounce");
@@ -52,9 +45,8 @@ export default function Header() {
         document.body.classList.remove("no-bounce");
       }
     };
-    // document.body.style.overflow = "hidden";
-    document.addEventListener("mousedown", handleClickOutside);
-    window.addEventListener("resize", handleResize);
+
+    document.addEventListener("resize", handleResize);
     window.addEventListener("scroll", headerFunc);
     window.addEventListener("scroll", handleScroll);
     handleResize(); // Initialize the isMobile state
@@ -62,23 +54,9 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", headerFunc);
       window.removeEventListener("resize", handleResize);
-      document.removeEventListener("mousedown", handleClickOutside);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const handleNavClick = (e: React.MouseEvent) => {
-    if (isMobile) {
-      const target = e.target as HTMLElement;
-      if (target.tagName === "A" || target.closest("a")) {
-        setIsMenuOpen(false);
-      }
-    }
-  };
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prevState) => !prevState);
-  };
 
   return (
     <nav className={`nav_bar ${isMobile ? "mobile" : ""}`} ref={headerRef}>
@@ -90,55 +68,18 @@ export default function Header() {
             </h1>
           </Link>
         </div>
-        <div
-          className={`navigation animation ${isMenuOpen ? "menu_active" : ""}`}
-          ref={menuRef}
-          onClick={handleNavClick}
-        >
-          <div className={"nav_menu"}>
-            {/* <ul className={"nav_list"}>
-              {NAV_LINKS.map((item, index) => {
-                if (index > 0) {
-                  return (
-                    <li key={index} className="nav_item">
-                      <Link
-                        key={index}
-                        href={item.path}
-                        className={isMobile ? "nav_link" : ""}
-                        onClick={() => {
-                          if (isMobile) {
-                            setIsMenuOpen(false);
-                          }
-                        }}
-                      >
-                        {item.display}
-                      </Link>
-                    </li>
-                  );
-                }
-              })}
-            </ul> */}
-            <div className={"nav_resume"}>
-              <button>Resume</button>
-            </div>
-            <div className={"mobile_logo"}>
-              <Link href={NAV_LINKS[0].path}>
-                <h1>
-                  <span>H</span>enry
-                </h1>
-              </Link>
-            </div>
-          </div>
+        <div className={"nav_resume"}>
+          <button className="resume_button">
+            <a
+              href="/pdfs/Henry_Nunez_Resume_2024.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              Resume
+            </a>
+          </button>
         </div>
-        {/* <span className={"mobile_menu_logo"}>
-          <i onClick={toggleMenu}>
-            <div className={"box"}>
-              <div className={"bar1"}></div>
-              <div className={"bar2"}></div>
-              <div className={"bar3"}></div>
-            </div>
-          </i>
-        </span> */}
       </div>
     </nav>
   );
