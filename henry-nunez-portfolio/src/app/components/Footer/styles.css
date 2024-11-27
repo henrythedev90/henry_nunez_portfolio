@@ -90,12 +90,13 @@
     border-left: 1px solid var(--imperialRed);
     border-right: 1px solid var(--im);
     letter-spacing: 0.12em;
+    font-size: 0.9rem;
   }
   .footer_link:hover {
     text-decoration: underline;
   }
   .footer_copyright_container {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     letter-spacing: 0.14em;
   }
 }

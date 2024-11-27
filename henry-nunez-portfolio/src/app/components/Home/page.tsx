@@ -12,6 +12,18 @@ const Home = () => {
   const { values, isSubmitted, handleChange, handleSubmit } = useContactForm();
   const [fadeIn, setFadeIn] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [screenSize, setScreenSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const imageSrc =
+    screenSize >= 1200 ? "/philly_run.avif" : "/profile_resize.avif";
 
   const NA = "🌎";
   const AF = "🌍";
@@ -53,7 +65,7 @@ const Home = () => {
         <div className="card-container">
           <div className="card">
             <Image
-              src="/profile_resize.avif"
+              src={imageSrc}
               alt=" image of Henry Nuñez running"
               width={200}
               height={300}
@@ -112,7 +124,7 @@ const Home = () => {
 
           <p>
             My name is Henry Nuñez and I have a little over 4 years of dedicated
-            experience as a software engineer, I’ve contributed to innovative
+            experience as a Software Engineer, I’ve contributed to innovative
             fintech solutions and supported non-profit organizations with
             impactful front-end work. Known for my problem-solving abilities,
             I’ve consistently delivered effective resolutions to critical web
