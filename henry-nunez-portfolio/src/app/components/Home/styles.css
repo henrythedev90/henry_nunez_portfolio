@@ -146,21 +146,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .card-container-desktop p {
     text-align: center;
-    border: 2px solid var(--darkerBlack);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     color: var(--imperialRed);
     background-color: var(--darkerBlack);
-    margin: 1% 2%;
-    padding: 15px;
-    font-size: 1.16em;
-    width: calc(100% - 4%);
-    max-width: 600px;
-    box-sizing: border-box;
-    line-height: 1.38;
-    letter-spacing: 0.06em;
+    padding: 30px;
+  }
+  .card-container-desktop p {
+    border: none; /* Remove border to avoid separation */
+    box-shadow: none; /* Remove shadow to keep elements unified */
+    color: inherit; /* Inherit text color from parent */
+    background-color: transparent; /* Make background transparent to blend with parent */
+    margin: 0; /* Remove margin to keep elements close */
+    padding: 0; /* Remove padding to avoid extra space */
+    font-size: inherit; /* Inherit font size from parent */
+    width: auto; /* Allow width to be determined by parent */
+    max-width: none; /* Remove max-width to allow full width */
+    max-height: none; /* Remove max-height to allow full height */
+    box-sizing: border-box; /* Keep box-sizing for consistency */
+    line-height: inherit; /* Inherit line height from parent */
+    letter-spacing: inherit; /* Inherit letter spacing from parent */
   }
 }
 
