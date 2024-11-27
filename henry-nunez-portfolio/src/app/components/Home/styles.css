@@ -152,19 +152,11 @@
     padding: 30px;
   }
   .card-container-desktop p {
-    border: none; /* Remove border to avoid separation */
-    box-shadow: none; /* Remove shadow to keep elements unified */
-    color: inherit; /* Inherit text color from parent */
-    background-color: transparent; /* Make background transparent to blend with parent */
+    border: 1px solid var(--imperialRed);
     margin: 0; /* Remove margin to keep elements close */
-    padding: 0; /* Remove padding to avoid extra space */
-    font-size: inherit; /* Inherit font size from parent */
+    padding: 10px 5px; /* Remove padding to avoid extra space */
     width: auto; /* Allow width to be determined by parent */
-    max-width: none; /* Remove max-width to allow full width */
-    max-height: none; /* Remove max-height to allow full height */
     box-sizing: border-box; /* Keep box-sizing for consistency */
-    line-height: inherit; /* Inherit line height from parent */
-    letter-spacing: inherit; /* Inherit letter spacing from parent */
   }
 }
 

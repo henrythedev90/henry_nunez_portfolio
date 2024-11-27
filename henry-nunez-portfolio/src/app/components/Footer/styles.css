@@ -47,6 +47,7 @@
     width: 130px;
     border-left: 1px solid var(--imperialRed);
     border-right: 1px solid var(--imperialRed);
+    font-size: 0.9rem;
   }
   .footer_copyright_container {
     display: flex;
@@ -54,6 +55,7 @@
     justify-content: end;
     text-align: end;
     letter-spacing: 0.02em;
+    font-size: 0.76rem;
   }
 }
 
