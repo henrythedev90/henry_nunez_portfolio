@@ -1,3 +1,31 @@
+:root {
+  --lapisLazuli: #00557d;
+  --cerulean: #0a82a2;
+  --cadetGray: #7d99a9;
+  --atomicTangerine: #e39172;
+  --imperialRed: #f53948;
+  --vermilion: #fd3938;
+  --darkerBlack: #030201;
+  --myrtleGreen: #267675;
+  --white: #fff;
+}
+.pdf_container {
+  border-top: 2px solid white;
+  margin-top: 20px;
+  padding: 30px 50px 150px;
+}
+.pdf_container > h1 {
+  text-align: center;
+  background-color: black;
+  max-width: 200px;
+  margin: 20px 10px;
+  padding: 10px 20px;
+  color: var(--imperialRed);
+  font-family: "Impact", sans-serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: 2rem;
+}
 @media only screen and (min-width: 1200px) {
   .pdf_container {
     display: flex;
@@ -11,7 +39,7 @@
     justify-content: center;
     align-items: center;
     width: 1125px;
-    height: 1150px;
+    height: 900px;
   }
 }
 @media only screen and (max-width: 1199px) {

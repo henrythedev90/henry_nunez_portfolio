@@ -19,11 +19,6 @@
 .profile_image {
   display: none;
 }
-/* @media only screen and (min-width: 1024px) {
-  .card-container-desktop p {
-    max-width: 900px;
-  }
-} */
 @media only screen and (min-width: 1200px) {
   .home_page {
     padding: 80px 10px 0px;
