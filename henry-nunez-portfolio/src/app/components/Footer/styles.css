@@ -18,7 +18,7 @@
     right: 0;
     background-color: var(--darkerBlack);
     margin-top: auto;
-    z-index: 3;
+    z-index: 100;
   }
   .footer_container {
     display: flex;
@@ -73,7 +73,7 @@
     border-bottom: 1px solid var(--darkerBlack);
     width: 100%;
     position: fixed;
-    z-index: 3;
+    z-index: 100;
     font-family: "Impact", sans-serif;
     font-weight: bold;
     text-rendering: optimizeLegibility;

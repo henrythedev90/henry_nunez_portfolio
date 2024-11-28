@@ -90,7 +90,7 @@
     font-family: "Impact", sans-serif;
     font-weight: bold;
     text-rendering: optimizeLegibility;
-    font-size: 5rem;
+    font-size: 9rem;
   }
   .image_card_text > :first-child {
     letter-spacing: 0.16em;
