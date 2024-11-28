@@ -6,6 +6,7 @@ import Skills from "./components/Skills/page";
 import Contact from "./components/Contact/page";
 import Header from "./components/Header/header";
 import Footer from "./components/Footer/Footer";
+import Resume from "./components/Resume/page";
 
 import "./globals.css";
 
@@ -30,7 +31,7 @@ const Page = () => {
         <Header />
         <Home />
         <Skills />
-        {isMobile ? <Contact /> : <div>hello</div>}
+        {isMobile ? <Contact /> : <Resume />}
         <Footer />
       </Fragment>
     </div>

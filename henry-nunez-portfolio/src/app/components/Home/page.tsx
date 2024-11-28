@@ -14,21 +14,6 @@ const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [screenSize, setScreenSize] = useState(window.innerWidth);
 
-  const NA = "🌎";
-  const AF = "🌍";
-  const AS = "🌏";
-  const globalEmoji = [NA, AF, AS];
-  const [currentEmoji, setCurrentEmoji] = useState(globalEmoji[0]);
-
-  let i = 0;
-  useEffect(() => {
-    setFadeIn(true);
-    const interval = setInterval(() => {
-      setCurrentEmoji(globalEmoji[i++ % globalEmoji.length]);
-    }, 500);
-    return () => clearInterval(interval);
-  }, []);
-
   useEffect(() => {
     const handleResize = () => {
       setScreenSize(window.innerWidth);
@@ -40,6 +25,12 @@ const Home = () => {
   const imageSrc =
     screenSize >= 1200 ? "/philly_run.avif" : "/profile_resize.avif";
 
+  const NA = "🌎";
+  const AF = "🌍";
+  const AS = "🌏";
+
+  const globalEmoji = [NA, AF, AS];
+  const [currentEmoji, setCurrentEmoji] = useState(globalEmoji[0]);
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -58,6 +49,15 @@ const Home = () => {
       console.error("Error submitting form:", error);
     }
   };
+
+  let i = 0;
+  useEffect(() => {
+    setFadeIn(true);
+    const interval = setInterval(() => {
+      setCurrentEmoji(globalEmoji[i++ % globalEmoji.length]);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="home_page">
