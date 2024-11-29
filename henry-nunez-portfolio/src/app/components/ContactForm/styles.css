@@ -10,7 +10,7 @@
 }
 
 .contact-form {
-  position: relative; /* Establishes a positioning context for the ::before pseudo-element */
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
