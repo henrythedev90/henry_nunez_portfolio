@@ -153,6 +153,21 @@
     width: auto; /* Allow width to be determined by parent */
     box-sizing: border-box; /* Keep box-sizing for consistency */
   }
+  .success-message {
+    z-index: 10; /* Increased z-index to bring it above other elements */
+    background-color: var(--darkerBlack);
+    padding: 20px;
+  }
+  .success-message p {
+    color: var(--imperialRed);
+    font-family: "Impact", sans-serif;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.08em;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 10; /* Increased z-index to match the parent and ensure visibility */
+  }
 }
 
 /* Bigger Tablets and Smaller Desktop */
@@ -427,14 +442,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .success-message p {
-    color: var(--imperialRed);
-    font-family: "Impact", sans-serif;
-    font-weight: bold;
-    text-rendering: optimizeLegibility;
-    letter-spacing: 0.08em;
-    font-size: 1.5rem;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 879px) {
