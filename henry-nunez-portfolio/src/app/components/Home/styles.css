@@ -639,10 +639,9 @@
     padding: 10px; /* Adjusted padding for better fit */
     background-color: var(--darkerBlack);
     color: var(--imperialRed);
-    line-height: 1.2; /* Increased line-height for readability */
+    line-height: 1.24; /* Increased line-height for readability */
     letter-spacing: 0.05em; /* Slightly reduced letter-spacing */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Reduced shadow for a softer effect */
-    font-style: oblique; /* Removed angle for better compatibility */
     font-size: 1.02rem; /* Adjusted font size for better visibility on smaller screens */
   }
 
