@@ -20,6 +20,13 @@ const Footer = () => {
             &copy; Copyright {currentYear} Developed and created by Henry Nuñez.
             All right reserved.{" "}
           </p>
+          <p>
+            Crafted with 💙 using{" "}
+            <span title="No frameworks, just pure CSS and JS">
+              Vanilla Code
+            </span>
+            .
+          </p>
         </div>
       </div>
     </footer>
