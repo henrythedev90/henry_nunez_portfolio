@@ -57,7 +57,7 @@ const Home = () => {
       setCurrentEmoji(globalEmoji[i++ % globalEmoji.length]);
     }, 500);
     return () => clearInterval(interval);
-  }, []);
+  }, [globalEmoji, i]);
 
   return (
     <div className="home_page">

@@ -56,7 +56,7 @@ export default function Header() {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [headerFunc]);
 
   return (
     <nav className={`nav_bar ${isMobile ? "mobile" : ""}`} ref={headerRef}>
