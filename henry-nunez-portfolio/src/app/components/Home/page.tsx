@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Modal } from "../Modal/Modal";
 import SplitText from "./SplitText";
 import { ContactForm } from "../ContactForm/ContactForm";
@@ -15,11 +15,13 @@ const Home = () => {
   const [screenSize, setScreenSize] = useState(window.innerWidth);
 
   useEffect(() => {
-    const handleResize = () => {
-      setScreenSize(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setScreenSize(window.innerWidth);
+      };
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
 
   const imageSrc =
@@ -29,7 +31,7 @@ const Home = () => {
   const AF = "🌍";
   const AS = "🌏";
 
-  const globalEmoji = [NA, AF, AS];
+  const globalEmoji = useMemo(() => [NA, AF, AS], []);
   const [currentEmoji, setCurrentEmoji] = useState(globalEmoji[0]);
   const openModal = () => {
     setIsModalOpen(true);
