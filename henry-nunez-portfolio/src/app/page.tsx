@@ -11,7 +11,9 @@ import Resume from "./components/Resume/page";
 import "./globals.css";
 
 const Page = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 601 : false
+  );
 
   useEffect(() => {
     if (typeof window !== "undefined") {

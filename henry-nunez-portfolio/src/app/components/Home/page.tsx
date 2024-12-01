@@ -12,13 +12,14 @@ const Home = () => {
   const { values, isSubmitted, handleChange, handleSubmit } = useContactForm();
   const [fadeIn, setFadeIn] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [screenSize, setScreenSize] = useState(window.innerWidth);
+  const [screenSize, setScreenSize] = useState<number>(0);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleResize = () => {
         setScreenSize(window.innerWidth);
       };
+      handleResize();
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
