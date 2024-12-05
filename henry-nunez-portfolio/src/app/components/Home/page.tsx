@@ -68,11 +68,11 @@ const Home = () => {
             <Image
               src={imageSrc}
               alt=" image of Henry Nuñez running"
-              width={200}
-              height={300}
               priority
               placeholder="blur"
               blurDataURL="/profile_resize.avif"
+              layout="fill"
+              objectFit="fill"
             />
             <div className="image_card_text">
               <p>Hello</p>
