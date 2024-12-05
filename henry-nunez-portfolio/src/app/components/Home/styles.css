@@ -649,7 +649,7 @@
   .card-container {
     position: static;
     width: 250px;
-    height: 300px !important;
+    max-height: 300px !important;
   }
 
   /* Common styles for all cards */
