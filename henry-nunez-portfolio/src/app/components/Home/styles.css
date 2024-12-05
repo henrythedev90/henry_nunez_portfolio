@@ -647,7 +647,7 @@
 
   /* Container for the cards */
   .card-container {
-    position: relative;
+    position: static;
     width: 250px;
     height: 300px;
   }
