@@ -606,6 +606,9 @@
 }
 
 @media only screen and (max-width: 767px) {
+  img {
+    height: 300px;
+  }
   .first_row_desktop {
     display: none;
   }

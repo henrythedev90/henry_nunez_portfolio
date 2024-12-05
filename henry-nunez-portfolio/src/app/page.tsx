@@ -16,17 +16,14 @@ const Page = () => {
   );
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth < 601);
-      };
-
-      window.addEventListener("resize", handleResize);
-      handleResize();
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 601);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -35,7 +32,9 @@ const Page = () => {
         <Header />
         <Home />
         <Skills />
-        {isMobile ? <Contact /> : <Resume />}
+
+        {isMobile ? <Contact key="contact" /> : <Resume key="resume" />}
+
         <Footer />
       </Fragment>
     </div>

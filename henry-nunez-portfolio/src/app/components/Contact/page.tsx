@@ -16,14 +16,14 @@ export default function Contact() {
             <p>Message sent successfully!</p>
           </div>
         ) : (
-          <>
+          <div>
             <h2>Lets get in touch</h2>
             <ContactForm
               values={values}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
             />
-          </>
+          </div>
         )}
       </div>
     </div>

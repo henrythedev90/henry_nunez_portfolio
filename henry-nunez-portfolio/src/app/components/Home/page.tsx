@@ -15,14 +15,12 @@ const Home = () => {
   const [screenSize, setScreenSize] = useState<number>(0);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleResize = () => {
-        setScreenSize(window.innerWidth);
-      };
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
+    const handleResize = () => {
+      setScreenSize(window.innerWidth);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const imageSrc =
