@@ -647,9 +647,10 @@
 
   /* Container for the cards */
   .card-container {
-    position: static;
+    position: relative;
     width: 250px;
-    max-height: 300px !important;
+    height: 300px;
+    margin-bottom: 20px;
   }
 
   /* Common styles for all cards */
