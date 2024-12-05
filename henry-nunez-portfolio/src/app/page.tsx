@@ -32,9 +32,7 @@ const Page = () => {
         <Header />
         <Home />
         <Skills />
-
         {isMobile ? <Contact key="contact" /> : <Resume key="resume" />}
-
         <Footer />
       </Fragment>
     </div>

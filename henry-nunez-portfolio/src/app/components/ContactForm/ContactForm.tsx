@@ -24,37 +24,38 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         <div className="form-container">
           <label htmlFor="name">
             <span>Name:</span>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              onChange={handleChange}
-              value={values.name}
-              required
-            />
           </label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            onChange={handleChange}
+            value={values.name}
+            required
+          />
           <label htmlFor="email">
             <span>Email:</span>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              onChange={handleChange}
-              value={values.email}
-              required
-            />
           </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            onChange={handleChange}
+            value={values.email}
+            required
+          />
           <label htmlFor="message">
             <span>Message:</span>
-            <textarea
-              name="message"
-              placeholder="Message"
-              onChange={handleChange}
-              value={values.message}
-              required
-            />
           </label>
+          <textarea
+            name="message"
+            placeholder="Message"
+            onChange={handleChange}
+            value={values.message}
+            required
+          />
         </div>
+
         <button className="submit-button" type="submit">
           Submit
         </button>
